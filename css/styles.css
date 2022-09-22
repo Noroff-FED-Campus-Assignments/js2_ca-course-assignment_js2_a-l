@@ -17,7 +17,6 @@ body {
 }
 body header {
   grid-area: header;
-  background-color: blue;
 }
 body main {
   grid-area: main;
@@ -26,4 +25,8 @@ body main {
 body footer {
   grid-area: footer;
   background-color: black;
-}/*# sourceMappingURL=styles.css.map */
+}
+
+header {
+  background-color: red;
+} /*# sourceMappingURL=styles.css.map */
