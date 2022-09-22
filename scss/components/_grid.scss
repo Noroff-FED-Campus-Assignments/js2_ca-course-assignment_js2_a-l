@@ -1,0 +1,33 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  html {
+    height: 100%;
+    width: 100%;
+  }
+}
+
+body {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 0.2fr 1fr 0.4fr;
+  grid-template-areas:
+    "header header header"
+    "main main main"
+    "footer footer footer";
+  min-height: 100vh;
+
+  header {
+    grid-area: header;
+    background-color: blue;
+  }
+  main {
+    grid-area: main;
+    background-color: orange;
+  }
+  footer {
+    grid-area: footer;
+    background-color: black;
+  }
+}
