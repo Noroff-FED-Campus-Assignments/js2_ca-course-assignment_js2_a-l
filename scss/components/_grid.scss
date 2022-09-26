@@ -11,7 +11,7 @@
 body {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
-    grid-template-rows: 0.2fr 1fr 0.4fr;
+    grid-template-rows: 0.2fr 1fr 0.1fr;
     grid-template-areas:
         "header header header"
         "main main main"
@@ -20,14 +20,14 @@ body {
 
     & header {
         grid-area: header;
-        background-color: white;
+        background-color: getColour(primary);
     }
     & main {
         grid-area: main;
-        background-color: orange;
+        background-color: getColour(bg-gray);
     }
     & footer {
         grid-area: footer;
-        background-color: white;
+        background-color: getColour(primary);
     }
 }
