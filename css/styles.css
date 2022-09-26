@@ -1,0 +1,116 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+* html {
+  height: 100%;
+  width: 100%;
+}
+
+body {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 0.2fr 1fr 0.1fr;
+  grid-template-areas: "header header header" "main main main" "footer footer footer";
+  min-height: 100vh;
+}
+body header {
+  grid-area: header;
+  background-color: #245ba3;
+}
+body main {
+  grid-area: main;
+  background-color: #e5eaef;
+}
+body footer {
+  grid-area: footer;
+  background-color: #245ba3;
+}
+
+.main__profile {
+  background-color: #7194c1;
+  margin: 20px 10% 20px;
+  color: white;
+  position: relative;
+}
+.main__profile ul {
+  list-style-type: none;
+  color: white;
+}
+.main__profile li {
+  list-style-type: none;
+  color: white;
+}
+.main__profile .profile__banner {
+  color: white;
+  border: 1px solid gray;
+}
+.main__profile .profile__avatar {
+  color: white;
+  height: 80px;
+  width: 80px;
+  border-radius: 50%;
+  background-color: white;
+  position: relative;
+  display: block;
+}
+.main__profile #avatar__img {
+  position: absolute;
+  height: 80px;
+  width: 80px;
+}
+.main__profile .profile__info {
+  color: white;
+}
+.main__profile .profile__list {
+  list-style-type: none;
+}
+.main__profile .profile__edit {
+  color: white;
+}
+.main__profile .profile__followers {
+  width: 100%;
+  border: 1px solid gray;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+}
+.main__profile .profile__info {
+  color: white;
+}
+.main__profile .profile__list {
+  color: white;
+}
+.main__profile .profile__edit {
+  color: white;
+}
+.main__profile .profile__follow {
+  color: white;
+}
+.main__profile .profile__feed {
+  border: 1px solid gray;
+}
+.main__profile .feed__container {
+  color: white;
+}
+.main__profile .feed__post {
+  color: white;
+  border: 1px solid gray;
+  margin: 10px 0;
+}
+.main__profile .feed__like {
+  background-color: transparent;
+}
+.main__profile .feed__post__msg {
+  color: white;
+}
+.main__profile .feed__post__action {
+  color: white;
+}
+.main__profile .feed__post__reaction {
+  color: white;
+}
+.main__profile .feed__post__comment {
+  color: white;
+}/*# sourceMappingURL=styles.css.map */
