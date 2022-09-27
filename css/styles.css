@@ -21,13 +21,15 @@ body {
 }
 body header {
   grid-area: header;
-
+  background-color: #245ba3;
 }
 body main {
   grid-area: main;
+  background-color: #e5eaef;
 }
 body footer {
   grid-area: footer;
+  background-color: #245ba3;
 }
 
 .navbar {
@@ -102,9 +104,7 @@ body footer {
   .nav-menu.active {
     left: 0;
   }
-
-
-
+}
 .main__profile {
   background-color: #7194c1;
   margin: 20px 10% 20px;
@@ -228,5 +228,4 @@ body footer {
 }
 .main__profile .comment__btn:hover {
   background-color: transparent;
-
 }/*# sourceMappingURL=styles.css.map */
