@@ -7,6 +7,10 @@
   height: 100%;
   width: 100%;
 }
+* a,
+* button {
+  cursor: pointer;
+}
 
 body {
   display: grid;
@@ -48,8 +52,8 @@ body footer {
 }
 .main__profile .profile__avatar {
   color: white;
-  height: 80px;
-  width: 80px;
+  height: 120px;
+  width: 120px;
   border-radius: 50%;
   background-color: white;
   position: relative;
@@ -57,8 +61,8 @@ body footer {
 }
 .main__profile #avatar__img {
   position: absolute;
-  height: 80px;
-  width: 80px;
+  height: 120px;
+  width: 120px;
 }
 .main__profile .profile__info {
   color: white;
@@ -88,19 +92,48 @@ body footer {
 .main__profile .profile__follow {
   color: white;
 }
+.main__profile .profile__follow a {
+  text-decoration: none;
+  color: white;
+}
+.main__profile .profile__follow a:hover {
+  color: black;
+}
 .main__profile .profile__feed {
   border: 1px solid gray;
 }
-.main__profile .feed__container {
-  color: white;
+.main__profile .profile__feed input {
+  width: 60%;
+  height: 100px;
+}
+.main__profile #small {
+  height: 50px;
+  width: 50px;
+}
+.main__profile .profile__avatar .post {
+  height: 50px;
+  width: 50px;
+}
+.main__profile .avatar__img .small {
+  height: 50px;
+  width: 50px;
 }
 .main__profile .feed__post {
   color: white;
   border: 1px solid gray;
   margin: 10px 0;
 }
+.main__profile .feed__container > div {
+  margin: 10px 0 10px 30px;
+}
 .main__profile .feed__like {
   background-color: transparent;
+  border: none;
+  width: 10px;
+  height: 10px;
+}
+.main__profile .feed__like img:hover {
+  color: white;
 }
 .main__profile .feed__post__msg {
   color: white;
@@ -113,4 +146,13 @@ body footer {
 }
 .main__profile .feed__post__comment {
   color: white;
+}
+.main__profile .comment__btn {
+  border: none;
+  border-radius: 5px;
+  height: 20px;
+  width: 60px;
+}
+.main__profile .comment__btn:hover {
+  background-color: transparent;
 }/*# sourceMappingURL=styles.css.map */
