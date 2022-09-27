@@ -10,6 +10,7 @@
 * a,
 * button {
   cursor: pointer;
+  text-decoration: none;
 }
 
 body {
@@ -21,7 +22,7 @@ body {
 }
 body header {
   grid-area: header;
-  background-color: #245ba3;
+  background-color: #002e6b;
 }
 body main {
   grid-area: main;
@@ -29,13 +30,13 @@ body main {
 }
 body footer {
   grid-area: footer;
-  background-color: #245ba3;
+  background-color: #002e6b;
 }
 
 .navbar {
   display: flex;
   justify-content: space-between;
-  margin: 0 10px;
+  margin: 20px 10px;
 }
 .navbar__branding {
   display: flex;
@@ -45,19 +46,58 @@ body footer {
   height: auto;
   max-width: 100px;
 }
+.navbar h1 {
+  color: #e5eaef;
+}
 
 .navbar__list {
   display: flex;
   list-style: none;
   align-items: center;
-  font-size: 1.5rem;
+  justify-content: center;
+  gap: 5px;
+  font-size: 1.4rem;
 }
 .navbar__list .navbar__item {
-  margin: 20px;
+  color: #eeeeee;
+  display: flex;
+  margin: 0 10px;
 }
-.navbar__list .navbar__link-img {
+.navbar__list i {
+  color: #e5eaef;
+  margin: 0 5px;
   height: auto;
   width: 25px;
+}
+
+.navbar__searchbar {
+  width: 100%;
+  height: 40px;
+  max-width: 400px;
+  display: inline-flex;
+}
+.navbar__searchbar-input {
+  flex-grow: 1;
+  padding: 15px;
+  outline: none;
+  border: 1px solid black;
+  border-radius: 5px 0 0 5px;
+}
+.navbar__searchbar-input::placeholder {
+  color: rgb(57, 57, 212);
+}
+.navbar__searchbar-btn {
+  outline: none;
+  width: 40px;
+  border: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 0 5px 5px 0;
+  cursor: pointer;
+}
+.navbar__searchbar-btn i {
+  color: #002e6b;
 }
 
 .hamburger {

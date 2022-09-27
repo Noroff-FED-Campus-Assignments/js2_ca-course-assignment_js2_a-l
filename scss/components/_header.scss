@@ -1,8 +1,7 @@
-
 .navbar {
   display: flex;
   justify-content: space-between;
-  margin: 0 10px;
+  margin: 20px 10px;
   &__branding {
     display: flex;
     align-items: center;
@@ -11,19 +10,60 @@
       max-width: 100px;
     }
   }
+  h1 {
+    color: getColour(bg-gray);
+  }
 }
 
 .navbar__list {
   display: flex;
   list-style: none;
   align-items: center;
-  font-size: 1.5rem;
+  justify-content: center;
+  gap: 5px;
+  font-size: 1.4rem;
+
   .navbar__item {
-    margin: 20px;
+    color: #eeeeee;
+    display: flex;
+    margin: 0 10px;
   }
-  .navbar__link-img {
+
+  i {
+    color: getColour(bg-gray);
+    margin: 0 5px;
     height: auto;
     width: 25px;
+  }
+}
+.navbar__searchbar {
+  width: 100%;
+  height: 40px;
+  max-width: 400px;
+  display: inline-flex;
+
+  &-input {
+    flex-grow: 1;
+    padding: 15px;
+    outline: none;
+    border: 1px solid black;
+    border-radius: 5px 0 0 5px;
+    &::placeholder {
+      color: rgb(57, 57, 212);
+    }
+  }
+  &-btn {
+    outline: none;
+    width: 40px;
+    border: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 0 5px 5px 0;
+    cursor: pointer;
+    i {
+      color: getColour(primary);
+    }
   }
 }
 // ------------------------------------------
@@ -71,4 +111,3 @@
     left: 0;
   }
 }
-
