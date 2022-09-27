@@ -123,6 +123,9 @@ body footer {
   border: 1px solid gray;
   margin: 10px 0;
 }
+.main__profile .feed__container > div {
+  margin: 10px 0 10px 30px;
+}
 .main__profile .feed__like {
   background-color: transparent;
   border: none;
