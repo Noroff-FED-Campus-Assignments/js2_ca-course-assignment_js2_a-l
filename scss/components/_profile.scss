@@ -1,0 +1,101 @@
+.main__profile {
+    background-color: getColour(Light-blue);
+    margin: 20px 10% 20px;
+    color: white;
+    position: relative;
+
+    & ul {
+        list-style-type: none;
+        color: white;
+    }
+    & li {
+        list-style-type: none;
+        color: white;
+    }
+
+    // profile picture and banner
+
+    & .profile__banner {
+        color: white;
+        border: 1px solid gray;
+    }
+
+    & .profile__avatar {
+        color: white;
+        height: 80px;
+        width: 80px;
+        border-radius: 50%;
+        background-color: white;
+        position: relative;
+        display: block;
+    }
+
+    & #avatar__img {
+        position: absolute;
+        height: 80px;
+        width: 80px;
+    }
+
+    // profile
+
+    & .profile__info {
+        color: white;
+    }
+
+    & .profile__list {
+        list-style-type: none;
+    }
+    & .profile__edit {
+        color: white;
+    }
+
+    // Followers and settings
+    & .profile__followers {
+        width: 100%;
+        border: 1px solid gray;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-evenly;
+    }
+    & .profile__info {
+        color: white;
+    }
+    & .profile__list {
+        color: white;
+    }
+    & .profile__edit {
+        color: white;
+    }
+    & .profile__follow {
+        color: white;
+    }
+
+    // feeds
+    & .profile__feed {
+        border: 1px solid gray;
+    }
+    & .feed__container {
+        color: white;
+    }
+    // feed posts
+    & .feed__post {
+        color: white;
+        border: 1px solid gray;
+        margin: 10px 0;
+    }
+    & .feed__like {
+        background-color: transparent;
+    }
+    & .feed__post__msg {
+        color: white;
+    }
+    & .feed__post__action {
+        color: white;
+    }
+    & .feed__post__reaction {
+        color: white;
+    }
+    & .feed__post__comment {
+        color: white;
+    }
+}

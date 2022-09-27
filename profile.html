@@ -7,7 +7,7 @@
         <meta name="keywords" content="" />
         <link rel="stylesheet" href="/css/styles.css" />
         <link rel="icon" href="data:;base64,=" />
-        <script defer src="./js/script.js"></script>
+        <script defer src="./js/scripts.mjs"></script>
         <title>Profile</title>
     </head>
     <body>
@@ -20,6 +20,7 @@
                                 xmlns="http://www.w3.org/2000/svg"
                                 height="48"
                                 width="48"
+                                class="test"
                             >
                                 <path
                                     d="M8 42V18L24.1 6 40 18v24H28.3V27.75h-8.65V42Z"
@@ -72,34 +73,31 @@
                     <img
                         src="/svg/person_FILL1_wght400_GRAD0_opsz48.svg"
                         alt="Profile picture"
+                        id="avatar__img"
                     />
                 </span>
+            </div>
+            <div class="profile__followers">
                 <div class="profile__info">
                     <section class="profile__list">
-                        <ol>
-                            <ul>
-                                Name:
-                            </ul>
-                            <ul>
-                                Country:
-                            </ul>
-                            <ul>
-                                Password:
-                            </ul>
-                        </ol>
+                        <ul>
+                            <li>Name:</li>
+                            <li>Country:</li>
+                            <li>Password:</li>
+                        </ul>
                     </section>
                     <section class="profile__edit">
                         <button>Edit</button>
                     </section>
                 </div>
-            </div>
-            <div class="profile__followers">
-                <div>follows:</div>
-                <div>
-                    <ol>
-                        <li>Fritjoff</li>
-                        <li>Gudrud</li>
-                    </ol>
+                <div class="profile__follow">
+                    follows:
+                    <div>
+                        <ul>
+                            <li>Fritjoff</li>
+                            <li>Gudrud</li>
+                        </ul>
+                    </div>
                 </div>
             </div>
             <div class="profile__feed">
@@ -107,7 +105,48 @@
                     <div class="feed__post">
                         <div class="feed__post__msg"></div>
                         <div class="feed__post__action">
-                            <button>Like</button> <button>Comment</button>
+                            <button class="feed__like">
+                                <svg
+                                    xmlns="http://www.w3.org/2000/svg"
+                                    height="48"
+                                    width="48"
+                                >
+                                    <path
+                                        d="M36.05 42H12.7V16.4L26.6 2l1.65 1.3q.55.4.725.9.175.5.175 1.15v.5L26.9 16.4H43q1.15 0 2.075.925Q46 18.25 46 19.4v4.1q0 .55-.125 1.275-.125.725-.375 1.275l-5.8 13.4q-.45 1.05-1.475 1.8Q37.2 42 36.05 42ZM9.7 16.4V42H4V16.4Z"
+                                    />
+                                </svg>
+                            </button>
+                            <button>Comment</button>
+                        </div>
+                        <div class="feed__post__reaction"></div>
+                        <div class="feed__post__comment">
+                            <div class="feed__post__action">
+                                <button class="feed__like">
+                                    <svg
+                                        xmlns="http://www.w3.org/2000/svg"
+                                        height="48"
+                                        width="48"
+                                    >
+                                        <path
+                                            d="M36.05 42H12.7V16.4L26.6 2l1.65 1.3q.55.4.725.9.175.5.175 1.15v.5L26.9 16.4H43q1.15 0 2.075.925Q46 18.25 46 19.4v4.1q0 .55-.125 1.275-.125.725-.375 1.275l-5.8 13.4q-.45 1.05-1.475 1.8Q37.2 42 36.05 42ZM9.7 16.4V42H4V16.4Z"
+                                        />
+                                    </svg> <button>Comment</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="feed__post">
+                        <div class="feed__post__msg"></div>
+                        <div class="feed__post__action">
+                            <button class="feed__like">
+                                <svg
+                                    xmlns="http://www.w3.org/2000/svg"
+                                    height="48"
+                                    width="48"
+                                >
+                                    <path
+                                        d="M36.05 42H12.7V16.4L26.6 2l1.65 1.3q.55.4.725.9.175.5.175 1.15v.5L26.9 16.4H43q1.15 0 2.075.925Q46 18.25 46 19.4v4.1q0 .55-.125 1.275-.125.725-.375 1.275l-5.8 13.4q-.45 1.05-1.475 1.8Q37.2 42 36.05 42ZM9.7 16.4V42H4V16.4Z"
+                                    />
+                                </svg> <button>Comment</button>
                         </div>
                         <div class="feed__post__reaction"></div>
                         <div class="feed__post__comment"></div>
@@ -115,15 +154,16 @@
                     <div class="feed__post">
                         <div class="feed__post__msg"></div>
                         <div class="feed__post__action">
-                            <button>Like</button> <button>Comment</button>
-                        </div>
-                        <div class="feed__post__reaction"></div>
-                        <div class="feed__post__comment"></div>
-                    </div>
-                    <div class="feed__post">
-                        <div class="feed__post__msg"></div>
-                        <div class="feed__post__action">
-                            <button>Like</button> <button>Comment</button>
+                            <button class="feed__like">
+                                <svg
+                                    xmlns="http://www.w3.org/2000/svg"
+                                    height="48"
+                                    width="48"
+                                >
+                                    <path
+                                        d="M36.05 42H12.7V16.4L26.6 2l1.65 1.3q.55.4.725.9.175.5.175 1.15v.5L26.9 16.4H43q1.15 0 2.075.925Q46 18.25 46 19.4v4.1q0 .55-.125 1.275-.125.725-.375 1.275l-5.8 13.4q-.45 1.05-1.475 1.8Q37.2 42 36.05 42ZM9.7 16.4V42H4V16.4Z"
+                                    />
+                                </svg> <button>Comment</button>
                         </div>
                         <div class="feed__post__reaction"></div>
                         <div class="feed__post__comment"></div>
