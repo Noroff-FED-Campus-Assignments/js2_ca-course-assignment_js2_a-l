@@ -149,7 +149,8 @@ body footer {
   background-color: #7194c1;
   margin: 20px 10% 20px;
   color: white;
-  position: relative;
+  display: grid;
+  grid-template-rows: auto;
 }
 .main__profile ul {
   list-style-type: none;
@@ -162,6 +163,7 @@ body footer {
 .main__profile .profile__banner {
   color: white;
   border: 1px solid gray;
+  position: relative;
 }
 .main__profile .profile__avatar {
   color: white;
@@ -169,11 +171,20 @@ body footer {
   width: 120px;
   border-radius: 50%;
   background-color: white;
+  position: absolute;
+  display: block;
+  top: -10px;
+}
+.main__profile .profile__avatar__small {
+  color: white;
+  height: 50px;
+  width: 50px;
+  border-radius: 50%;
+  background-color: white;
   position: relative;
   display: block;
 }
 .main__profile #avatar__img {
-  position: absolute;
   height: 120px;
   width: 120px;
 }
@@ -189,12 +200,13 @@ body footer {
 .main__profile .profile__followers {
   width: 100%;
   border: 1px solid gray;
-  display: flex;
-  flex-direction: row;
-  justify-content: space-evenly;
+  display: grid;
+  grid-template-columns: auto;
+  grid-template-areas: ". info follow .";
 }
 .main__profile .profile__info {
   color: white;
+  grid-area: info;
 }
 .main__profile .profile__list {
   color: white;
@@ -204,6 +216,7 @@ body footer {
 }
 .main__profile .profile__follow {
   color: white;
+  grid-area: follow;
 }
 .main__profile .profile__follow a {
   text-decoration: none;
@@ -215,9 +228,12 @@ body footer {
 .main__profile .profile__feed {
   border: 1px solid gray;
 }
-.main__profile .profile__feed input {
+.main__profile .profile__feed textarea {
   width: 60%;
   height: 100px;
+  border: transparent;
+  border-radius: 5px;
+  padding: 5px;
 }
 .main__profile #small {
   height: 50px;
@@ -245,7 +261,7 @@ body footer {
   width: 10px;
   height: 10px;
 }
-.main__profile .feed__like img:hover {
+.main__profile .feed__like:hover {
   color: white;
 }
 .main__profile .feed__post__msg {

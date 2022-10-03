@@ -79,6 +79,7 @@
             <div class="profile__followers">
                 <div class="profile__info">
                     <section class="profile__list">
+                        <h3>Profile:</h3>
                         <ul>
                             <li>
                                 Name:
@@ -99,7 +100,7 @@
                     </section>
                 </div>
                 <div class="profile__follow">
-                    <h1>Follows:</h1>
+                    <h3>Follows:</h3>
                     <div>
                         <ul>
                             <li><a href="#">Fritjoff</a></li>
@@ -112,7 +113,7 @@
                 <div class="feed__container">
                     <div class="feed__post">
                         <div class="feed__post__msg">
-                            <div class="profile__avatar" id="small">
+                            <div class="profile__avatar__small" id="small">
                                 <div class="avatar__img" id="small">
                                     <img
                                         src="/svg/person_FILL1_wght400_GRAD0_opsz48.svg"
@@ -129,27 +130,33 @@
                                 id="feed__msg"
                                 class="comment__post"
                             >
-                                <input
+                                <textarea
                                     type="text"
                                     name="comment"
                                     id="comment"
                                     placeholder="write here...."
-                                />
+                                ></textarea>
                                 <button type="submit" class="comment__btn">
                                     Send
                                 </button>
-                                <button type="submit" class="feed__like">
+                            </form>
+                            <div class="feed__post_reaction">
+                                <div class="feed__like">
                                     <img
                                         src="/svg/thumb_up_FILL1_wght400_GRAD0_opsz48.svg"
                                         alt="thumbs up"
                                     />
-                                </button>
-                            </form>
+                                </div>
+                                <div class="feed_comment"></div>
+                            </div>
                         </div>
                         <div class="feed__post__comments">
                             <div class="feed__post">
                                 <div class="feed__post__msg">
-                                    <div class="profile__avatar" id="small">
+                                    <div
+                                        class="profile__avatar__small"
+                                        id="small"
+                                    >
                                         <div class="avatar__img" id="small">
                                             <img
                                                 src="/svg/person_FILL1_wght400_GRAD0_opsz48.svg"
@@ -169,12 +176,12 @@
                                         id="feed__msg"
                                         class="comment__post"
                                     >
-                                        <input
+                                        <textarea
                                             type="text"
                                             name="comment"
                                             id="comment"
                                             placeholder="write here...."
-                                        />
+                                        ></textarea>
                                         <button
                                             type="submit"
                                             class="comment__btn"
@@ -191,13 +198,17 @@
                                             />
                                         </button>
                                     </form>
+                                    <div class="feed__post_reaction"></div>
                                 </div>
                             </div>
                         </div>
                         <div class="feed__post__comments">
                             <div class="feed__post">
                                 <div class="feed__post__msg">
-                                    <div class="profile__avatar" id="small">
+                                    <div
+                                        class="profile__avatar__small"
+                                        id="small"
+                                    >
                                         <div class="avatar__img" id="small">
                                             <img
                                                 src="/svg/person_FILL1_wght400_GRAD0_opsz48.svg"
@@ -217,12 +228,12 @@
                                         id="feed__msg"
                                         class="comment__post"
                                     >
-                                        <input
+                                        <textarea
                                             type="text"
                                             name="comment"
                                             id="comment"
                                             placeholder="write here...."
-                                        />
+                                        ></textarea>
                                         <button
                                             type="submit"
                                             class="comment__btn"
