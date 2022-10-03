@@ -28,7 +28,10 @@
     display: flex;
     margin: 0 10px;
   }
-
+  a {
+    text-decoration: none;
+    color: inherit;
+  }
   i {
     color: getColour(bg-gray);
     margin: 0 5px;
@@ -99,7 +102,6 @@
     top: 70px;
     gap: 0;
     flex-direction: column;
-    background-color: var(--dark);
     width: 100%;
     text-align: center;
     transition: 0.3s;

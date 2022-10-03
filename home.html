@@ -23,12 +23,12 @@
         >
         <ul class="navbar__list">
           <li class="navbar__item">
-            <a href="#" class="navbar__link"></a>
-              <i class="material-icons"> home </i> Home</a
+            <a href="#" class="navbar__link"
+              ><i class="material-icons"> home </i>Home</a
             >
           </li>
           <li class="navbar__item">
-            <a href="#" class="navbar__link"></a>
+            <a href="#" class="navbar__link">
               <i class="material-icons"> person </i> Profil</a
             >
           </li>
@@ -55,17 +55,27 @@
         </div>
       </nav>
     </header>
-    <main>
+    <main class="home__main">
       <section class="post__message">
         <div>
-          <img src="" alt="" class="avatar" />
-          <h2 class="userName"></h2>
+          <img
+            src="./svg/person_FILL1_wght400_GRAD0_opsz48.svg"
+            alt=""
+            class="avatar"
+          />
+          <h2 class="userName">UserName</h2>
         </div>
         <form class="status__update" action="">
           <label for="status">
-            <textarea name="status" id="status" cols="30" rows="10"></textarea>
+            <textarea
+              name="status"
+              id="status"
+              cols="30"
+              rows="3"
+              placeholder="What’s on your mind? ......"
+            ></textarea>
           </label>
-          <button type="submit">Post</button>
+          <button class="status__btn" type="submit">Post</button>
         </form>
       </section>
     </main>
