@@ -6,6 +6,10 @@
     <meta name="description" content="" />
     <meta name="keywords" content="" />
     <link rel="stylesheet" href="/css/styles.css" />
+    <link
+      href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet"
+    />
     <link rel="icon" href="data:;base64,=" />
     <script src="./js/header.js"></script>
     <title>Home</title>
@@ -19,33 +23,28 @@
         >
         <ul class="navbar__list">
           <li class="navbar__item">
-            <a href="#" class="navbar__link">
-              <img
-                class="navbar__link-img"
-                src="/svg/home_FILL1_wght400_GRAD0_opsz48.svg"
-                alt=""
-              />Home</a
+            <a href="#" class="navbar__link"></a>
+              <i class="material-icons"> home </i> Home</a
             >
           </li>
           <li class="navbar__item">
-            <a href="#" class="navbar__link"
-              ><img
-                class="navbar__link-img"
-                src="/svg/person_FILL1_wght400_GRAD0_opsz48.svg"
-                alt=""
-              />Profil</a
+            <a href="#" class="navbar__link"></a>
+              <i class="material-icons"> person </i> Profil</a
             >
           </li>
           <li class="navbar__item">
-            <form action="/action_page.php">
-              <input type="text" placeholder="Search.." name="search" />
-              <button type="submit">
-                <img
-                  class="navbar__link-img"
-                  src="/svg/search_FILL1_wght400_GRAD0_opsz48.svg"
-                  alt=""
+            <form action="">
+              <div class="navbar__searchbar">
+                <input
+                  type="text"
+                  class="navbar__searchbar-input"
+                  name="search"
+                  placeholder="Search"
                 />
-              </button>
+                <button type="submit" class="navbar__searchbar-btn">
+                  <i class="material-icons"> search </i>
+                </button>
+              </div>
             </form>
           </li>
         </ul>
