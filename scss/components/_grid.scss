@@ -26,6 +26,7 @@ body {
         "main main main"
         "footer footer footer";
     min-height: 100vh;
+    background-color: getColour(bg-white);
 
     & header {
         grid-area: header;
@@ -33,7 +34,6 @@ body {
     }
     & main {
         grid-area: main;
-        background-color: getColour(bg-gray);
     }
     & footer {
         grid-area: footer;
