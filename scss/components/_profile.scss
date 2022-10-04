@@ -1,10 +1,13 @@
 .main__profile {
-    background-color: getColour(Light-blue);
+    // background-color: getColour(Light-blue);
     margin: 20px 10% 20px;
     color: white;
     display: grid;
     grid-template-rows: auto;
 
+    & .main_profile > * {
+        background-color: getColour(Light-blue);
+    }
     & ul {
         list-style-type: none;
         color: white;
@@ -20,6 +23,8 @@
         color: white;
         border: 1px solid gray;
         position: relative;
+        height: 125px;
+        border-top-left-radius: 60px;
     }
 
     & .profile__avatar {
@@ -30,7 +35,6 @@
         background-color: white;
         position: absolute;
         display: block;
-        top: -10px;
     }
     & .profile__avatar__small {
         color: white;
