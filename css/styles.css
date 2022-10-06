@@ -7,11 +7,6 @@
   height: 100%;
   width: 100%;
 }
-* a,
-* button {
-  cursor: pointer;
-  text-decoration: none;
-}
 
 body {
   display: grid;
@@ -22,7 +17,7 @@ body {
 }
 body header {
   grid-area: header;
-  background-color: #002e6b;
+  background-color: #245ba3;
 }
 body main {
   grid-area: main;
@@ -30,178 +25,7 @@ body main {
 }
 body footer {
   grid-area: footer;
-  background-color: #002e6b;
-}
-
-.navbar {
-  display: flex;
-  justify-content: space-between;
-  margin: 20px 10px;
-}
-.navbar__branding {
-  display: flex;
-  align-items: center;
-}
-.navbar__branding-img {
-  height: auto;
-  max-width: 100px;
-}
-.navbar h1 {
-  color: #e5eaef;
-}
-
-.navbar__list {
-  display: flex;
-  list-style: none;
-  align-items: center;
-  justify-content: center;
-  gap: 5px;
-  font-size: 1.4rem;
-}
-.navbar__list .navbar__item {
-  color: #eeeeee;
-  display: flex;
-  margin: 0 10px;
-}
-.navbar__list a {
-  text-decoration: none;
-  color: inherit;
-}
-.navbar__list i {
-  color: #e5eaef;
-  margin: 0 5px;
-  height: auto;
-  width: 25px;
-}
-
-.navbar__searchbar {
-  width: 100%;
-  height: 40px;
-  max-width: 400px;
-  display: inline-flex;
-}
-.navbar__searchbar-input {
-  flex-grow: 1;
-  padding: 15px;
-  outline: none;
-  border: 1px solid black;
-  border-radius: 5px 0 0 5px;
-}
-.navbar__searchbar-input::placeholder {
-  color: rgb(57, 57, 212);
-}
-.navbar__searchbar-btn {
-  outline: none;
-  width: 40px;
-  border: none;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  border-radius: 0 5px 5px 0;
-  cursor: pointer;
-}
-.navbar__searchbar-btn i {
-  color: #002e6b;
-}
-
-.hamburger {
-  display: none;
-  cursor: pointer;
-}
-
-.bar {
-  display: block;
-  width: 25px;
-  height: 3px;
-  margin: 5px auto;
-  transition: all 0.3 ease-in-out;
-  background-color: #eeeeee;
-}
-
-@media screen and (max-width: 789px) {
-  .hamburger {
-    display: block;
-  }
-  .hamburger.active .bar:nth-child(2) {
-    opacity: 0;
-  }
-  .hamburger.active .bar:nth-child(1) {
-    transform: translateY(8px) rotate(45deg);
-  }
-  .hamburger.active .bar:nth-child(3) {
-    transform: translateY(-8px) rotate(-45deg);
-  }
-  .navbar__list {
-    position: fixed;
-    left: -100%;
-    top: 70px;
-    gap: 0;
-    flex-direction: column;
-    width: 100%;
-    text-align: center;
-    transition: 0.3s;
-  }
-  .navbar__item {
-    margin: 16px 0;
-  }
-  .nav-menu.active {
-    left: 0;
-  }
-}
-.home__main {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-.post__message {
-  background-color: #7194c1;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  width: 100%;
-  max-width: 800px;
-  margin: 20px;
-  border-radius: 60px 10px 10px 10px;
-}
-.post__message div {
-  display: flex;
-  gap: 20px;
-  align-items: center;
-  width: 100%;
-}
-.post__message .avatar {
-  height: 120px;
-  width: 120px;
-  border-radius: 50%;
-  background-color: white;
-}
-
-.status__update {
-  display: flex;
-  gap: 10px;
-  flex-direction: column;
-  width: 70%;
-}
-.status__update textarea {
-  height: 80px;
-  padding: 10px;
-  border: none;
-  border-radius: 10px;
-  resize: none;
-  width: 100%;
-}
-.status__update .status__btn {
-  width: 30px;
-  align-self: flex-end;
-  height: 30px;
-  width: 150px;
-  color: #e5eaef;
-  background-color: #002e6b;
-  border: none;
-  border-radius: 10px;
-  margin-bottom: 10px;
+  background-color: #245ba3;
 }
 
 .main__profile {
@@ -224,8 +48,8 @@ body footer {
 }
 .main__profile .profile__avatar {
   color: white;
-  height: 120px;
-  width: 120px;
+  height: 80px;
+  width: 80px;
   border-radius: 50%;
   background-color: white;
   position: relative;
@@ -233,8 +57,8 @@ body footer {
 }
 .main__profile #avatar__img {
   position: absolute;
-  height: 120px;
-  width: 120px;
+  height: 80px;
+  width: 80px;
 }
 .main__profile .profile__info {
   color: white;
@@ -264,48 +88,19 @@ body footer {
 .main__profile .profile__follow {
   color: white;
 }
-.main__profile .profile__follow a {
-  text-decoration: none;
-  color: white;
-}
-.main__profile .profile__follow a:hover {
-  color: black;
-}
 .main__profile .profile__feed {
   border: 1px solid gray;
 }
-.main__profile .profile__feed input {
-  width: 60%;
-  height: 100px;
-}
-.main__profile #small {
-  height: 50px;
-  width: 50px;
-}
-.main__profile .profile__avatar .post {
-  height: 50px;
-  width: 50px;
-}
-.main__profile .avatar__img .small {
-  height: 50px;
-  width: 50px;
+.main__profile .feed__container {
+  color: white;
 }
 .main__profile .feed__post {
   color: white;
   border: 1px solid gray;
   margin: 10px 0;
 }
-.main__profile .feed__post > div {
-  margin: 10px 0 10px 30px;
-}
 .main__profile .feed__like {
   background-color: transparent;
-  border: none;
-  width: 10px;
-  height: 10px;
-}
-.main__profile .feed__like img:hover {
-  color: white;
 }
 .main__profile .feed__post__msg {
   color: white;
@@ -318,25 +113,4 @@ body footer {
 }
 .main__profile .feed__post__comment {
   color: white;
-}
-.main__profile .comment__btn {
-  border: none;
-  border-radius: 5px;
-  height: 20px;
-  width: 60px;
-}
-.main__profile .comment__btn:hover {
-  background-color: transparent;
-}
-
-footer {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 20px;
-  padding: 10px 0;
-}
-footer img {
-  max-width: 100px;
-  height: auto;
 }/*# sourceMappingURL=styles.css.map */
