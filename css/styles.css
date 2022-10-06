@@ -327,4 +327,16 @@ body footer {
 }
 .main__profile .comment__btn:hover {
   background-color: transparent;
+}
+
+footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  padding: 10px 0;
+}
+footer img {
+  max-width: 100px;
+  height: auto;
 }/*# sourceMappingURL=styles.css.map */
