@@ -21,6 +21,7 @@ body {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   grid-template-rows: 0.2fr 1fr 0.1fr;
+  justify-content: center;
   grid-template-areas: "header header header" "main main main" "footer footer footer";
   min-height: 100vh;
   background-color: #f7f7f7;
@@ -30,6 +31,7 @@ body header {
   background-color: #002e6b;
 }
 body main {
+  align-self: center;
   grid-area: main;
 }
 body footer {
@@ -350,6 +352,50 @@ body footer {
 }
 .main__profile .comment__btn:hover {
   background-color: transparent;
+}
+
+.login__header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.login__header img {
+  max-width: 100px;
+  height: auto;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  background-color: #7194c1;
+  margin: auto;
+  border-radius: 10px;
+  max-width: 500px;
+  padding: 20px;
+}
+form label {
+  display: flex;
+  flex-direction: column;
+  font-size: 1.2rem;
+  gap: 5px;
+  margin: 20px 0;
+}
+form input {
+  padding: 10px;
+  border: none;
+  border-radius: 10px;
+}
+form button {
+  align-self: flex-end;
+  height: 35px;
+  width: 110px;
+  border: none;
+  border-radius: 10px;
+  background-color: #002e6b;
+  color: #e5eaef;
+}
+form h2 {
+  margin: auto;
 }
 
 footer {
