@@ -11,47 +11,39 @@
       rel="stylesheet"
     />
     <link rel="icon" href="data:;base64,=" />
-    <script src="./js/header.js"></script>
+    <script defer src="./js/header.js"></script>
     <title>Home</title>
   </head>
   <body>
     <header>
       <nav class="navbar">
-        <a href="./home.html" class="navbar__branding">
-          <img class="navbar__branding-img" src="./svg/logo/logo.png" alt="" />
-          <h1>The Community</h1></a
+        <a href="./home.html" class="navbar__branding"
+          ><img src="./svg/logo/logo.png" alt="" /> The Community</a
         >
-        <ul class="navbar__list">
+        <ul class="navbar__menu">
           <li class="navbar__item">
-            <a href="#" class="navbar__link"
+            <a class="navbar__link" href="./home.html"
               ><i class="material-icons"> home </i>Home</a
             >
           </li>
           <li class="navbar__item">
-            <a href="#" class="navbar__link">
-              <i class="material-icons"> person </i> Profil</a
+            <a class="navbar__link" href="./profile.html"
+              ><i class="material-icons"> person </i>Profile</a
             >
           </li>
           <li class="navbar__item">
-            <form action="">
-              <div class="navbar__searchbar">
-                <input
-                  type="text"
-                  class="navbar__searchbar-input"
-                  name="search"
-                  placeholder="Search"
-                />
-                <button type="submit" class="navbar__searchbar-btn">
-                  <i class="material-icons"> search </i>
-                </button>
-              </div>
+            <form class="navbar__from" action="">
+              <input type="text" placeholder="Search..." name="search" />
+              <button type="submit">
+                <i class="material-icons"> search </i>
+              </button>
             </form>
           </li>
         </ul>
         <div class="hamburger">
-          <span class="bar"></span>
-          <span class="bar"></span>
-          <span class="bar"></span>
+          <span class="hamburger__bar"></span>
+          <span class="hamburger__bar"></span>
+          <span class="hamburger__bar"></span>
         </div>
       </nav>
     </header>
