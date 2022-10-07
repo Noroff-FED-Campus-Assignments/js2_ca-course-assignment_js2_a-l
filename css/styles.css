@@ -143,12 +143,6 @@ body footer {
     margin: 20px 0;
   }
 }
-.home__main {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
 .post__message {
   background-color: #7194c1;
   display: flex;
@@ -157,7 +151,7 @@ body footer {
   align-items: center;
   width: 100%;
   max-width: 800px;
-  margin: 20px;
+  margin: 40px auto;
   border-radius: 60px 10px 10px 10px;
 }
 .post__message div {
@@ -186,6 +180,7 @@ body footer {
   border-radius: 10px;
   resize: none;
   width: 100%;
+  background-color: #e5eaef;
 }
 .status__update .status__btn {
   width: 30px;
@@ -385,6 +380,72 @@ body footer {
 }
 .login__form h2 {
   margin: auto;
+}
+
+.main__post--wrapper {
+  display: flex;
+  flex-direction: column;
+  margin: 40px 0;
+  justify-content: center;
+  align-items: center;
+}
+
+.main__post--container {
+  background-color: #7194c1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  max-width: 800px;
+  border-radius: 60px 10px 10px 10px;
+}
+.main__post--container .post__user {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+  width: 100%;
+}
+.main__post--container .avatar {
+  height: 80px;
+  width: 80px;
+  border-radius: 50%;
+  background-color: white;
+}
+
+.post__message--container {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  height: auto;
+  width: 90%;
+  min-height: 100px;
+  background-color: #e5eaef;
+  margin: 20px;
+  border: none;
+  border-radius: 10px;
+}
+.post__message--container p {
+  flex: 1;
+  padding: 10px;
+  font-size: 1.2rem;
+  width: 100%;
+}
+.post__message--container i {
+  align-self: flex-end;
+  padding: 0 20px 10px 20px;
+  cursor: pointer;
+  font-size: 2rem;
+}
+
+.container__comments {
+  display: flex;
+  flex-direction: column;
+  padding-left: 20px;
+  width: 100%;
+}
+.container__comments .avatar {
+  height: 50px;
+  width: 50px;
 }
 
 footer {

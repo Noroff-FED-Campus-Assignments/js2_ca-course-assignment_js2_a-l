@@ -1,8 +1,8 @@
-.home__main {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
+// .home__main {
+//   display: flex;
+//   flex-direction: column;
+//   align-items: center;
+// }
 
 .post__message {
   background-color: getColour(Light-blue);
@@ -12,7 +12,7 @@
   align-items: center;
   width: 100%;
   max-width: 800px;
-  margin: 20px;
+  margin: 40px auto;
   border-radius: 60px 10px 10px 10px;
   div {
     display: flex;
@@ -40,6 +40,7 @@
     border-radius: 10px;
     resize: none;
     width: 100%;
+    background-color: getColour(bg-gray);
   }
   .status__btn {
     width: 30px;
