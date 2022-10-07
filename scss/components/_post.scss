@@ -24,7 +24,7 @@
     height: 80px;
     width: 80px;
     border-radius: 50%;
-    background-color: white;
+    background-color: getColour(bg-gray);
   }
 }
 .post__message--container {
