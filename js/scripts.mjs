@@ -1,1 +1,3 @@
-console.log("hei");
+import { userName } from "./loginForm.mjs";
+
+console.log(userName);
