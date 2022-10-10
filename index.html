@@ -7,7 +7,7 @@
     <meta name="keywords" content="" />
     <link rel="stylesheet" href="/css/styles.css" />
     <link rel="icon" href="data:;base64,=" />
-    <script defer src="./js/script.js"></script>
+    <script src="./js/register.mjs" type="module"></script>
     <title>The community</title>
   </head>
   <body>
@@ -17,17 +17,37 @@
     </header>
     <main>
       <section>
-        <form class="login__form" action="./home.html">
+        <form class="login__form" id="">
           <h2>Welcome to The Communuity</h2>
           <label>
+            Name
+            <input
+              type="text"
+              placeholder="Name"
+              name="username"
+              id="user__name"
+              value="dette er en test"
+            />
+          </label>
+          <label>
             Email
-            <input type="text" placeholder="Email" name="userEmail" />
+            <input
+              type="text"
+              placeholder="Email"
+              name="useremail"
+              id="user__email"
+            />
           </label>
           <label>
             Password
-            <input type="password" placeholder="Password" name="Password" />
+            <input
+              type="password"
+              placeholder="Password"
+              name="Password"
+              id="user__password"
+            />
           </label>
-          <button type="submit">Login</button>
+          <button type="submit" id="login__btn">Login</button>
         </form>
       </section>
     </main>
