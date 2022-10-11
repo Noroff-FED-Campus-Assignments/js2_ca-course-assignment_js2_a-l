@@ -14,16 +14,16 @@ import { fetchOptions } from "./get.mjs";
  */
 
 export async function postApiCall(url, option = {}) {
-  try {
-    option;
-    const response = await fetch(url, postData);
-    console.log(response);
-    const json = await response.json();
-    console.log(json);
-    return json;
-  } catch (error) {
-    console.log(error);
-  }
+    try {
+        option;
+        const response = await fetch(url, postData);
+        console.log(response);
+        const json = await response.json();
+        console.log(json);
+        return json;
+    } catch (error) {
+        console.log(error);
+    }
 }
 // --------------------------------------------
 
@@ -37,26 +37,26 @@ export async function postApiCall(url, option = {}) {
  * ´´´
  */
 export async function loginUser(url, option = {}) {
-  try {
-    option;
-    const response = await fetch(url, loginData);
-    const json = await response.json();
-    const accessToken = json.accessToken;
-    localStorage.setItem("accessToken", accessToken);
-  } catch (error) {
-    console.log(error);
-  }
+    try {
+        option;
+        const response = await fetch(url, loginData);
+        const json = await response.json();
+        const accessToken = json.accessToken;
+        localStorage.setItem("accessToken", accessToken);
+    } catch (error) {
+        console.log(error);
+    }
 }
 
 // ---------------------------------------------------------
 
 export async function ApicallWithToken(url, option = {}) {
-  try {
-    option;
-    const response = await fetch(url, fetchOptions);
-    const json = await response.json();
-    console.log(json);
-  } catch (error) {
-    console.log(error);
-  }
+    try {
+        option;
+        const response = await fetch(url, fetchOptions);
+        const json = await response.json();
+        console.log(json);
+    } catch (error) {
+        console.log(error);
+    }
 }
