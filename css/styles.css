@@ -20,7 +20,7 @@
 body {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
-  grid-template-rows: 0.2fr 1fr 0.1fr;
+  grid-template-rows: 150px 1fr 0.1fr;
   justify-content: center;
   grid-template-areas: "header header header" "main main main" "footer footer footer";
   min-height: 100vh;
@@ -435,6 +435,7 @@ a {
   flex-direction: column;
   margin: 40px 0;
   align-items: center;
+  width: 100%;
 }
 
 .main__post--container {
