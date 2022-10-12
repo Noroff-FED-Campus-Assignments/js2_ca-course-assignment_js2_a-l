@@ -32,6 +32,5 @@ export async function homePageContent(method) {
     }
   } catch (error) {
     console.log(error);
-    console.log("hei");
   }
 }

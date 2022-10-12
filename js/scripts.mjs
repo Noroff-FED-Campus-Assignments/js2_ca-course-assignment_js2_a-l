@@ -12,6 +12,6 @@ const loginUrl = `${apiBaseUrl}/api/v1/social/auth/login`;
 export const postUrl = `${apiBaseUrl}/api/v1/social/posts`;
 
 // postApiCall(registerUserUrl, postData);
-// loginUser(loginUrl, loginData);
+loginUser(loginUrl, loginData);
 // ApicallWithToken(postUrl, fetchOptions);
-homePageContent(ApicallWithToken);
+// homePageContent(ApicallWithToken);
