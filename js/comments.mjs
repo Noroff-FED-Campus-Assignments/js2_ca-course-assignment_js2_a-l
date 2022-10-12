@@ -17,8 +17,9 @@ statusForm.addEventListener("submit", async (e) => {
       },
       body: JSON.stringify(formDataSerialized),
     });
-    window.location.reload();
   } catch (error) {
     console.log(error);
+  } finally {
+    window.location.reload();
   }
 });
