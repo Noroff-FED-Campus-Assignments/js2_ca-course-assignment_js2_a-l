@@ -1,17 +1,17 @@
-import {
-  postApiCall,
-  loginUser,
-  ApicallWithToken,
-} from "./components/apiMethod.mjs";
-import { postData } from "./components/register.mjs";
-import { loginData } from "./components/login.mjs";
-import { fetchOptions } from "./components/get.mjs";
+import { loginData, postData, fetchOptions } from "./components/apiMethod.mjs";
 
+import {
+  loginUser,
+  postApiCall,
+  ApicallWithToken,
+} from "./components/apiCall.mjs";
+import { homePageContent } from "./home.mjs";
 const apiBaseUrl = "https://nf-api.onrender.com";
 const registerUserUrl = `${apiBaseUrl}/api/v1/social/auth/register`;
 const loginUrl = `${apiBaseUrl}/api/v1/social/auth/login`;
-const postUrl = `${apiBaseUrl}/api/v1/social/posts`;
+export const postUrl = `${apiBaseUrl}/api/v1/social/posts`;
 
 // postApiCall(registerUserUrl, postData);
-loginUser(loginUrl, loginData);
-ApicallWithToken(postUrl, fetchOptions);
+// loginUser(loginUrl, loginData);
+// ApicallWithToken(postUrl, fetchOptions);
+homePageContent(ApicallWithToken);
