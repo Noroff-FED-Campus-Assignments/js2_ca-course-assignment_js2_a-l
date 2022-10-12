@@ -11,7 +11,7 @@ export async function homePageContent(method) {
 
     for (let i = 0; i < 10; i++) {
       const post = data[i];
-      console.log(post);
+      // console.log(post);
       homeContainer.innerHTML += `<div class="main__post--container">
                                      <div class="post__user">
                                         <img
@@ -34,3 +34,57 @@ export async function homePageContent(method) {
     console.log(error);
   }
 }
+
+// <!--
+// <div class="main__post--container">
+//   <div class="post__user">
+//     <img
+//       src="./svg/person_FILL1_wght400_GRAD0_opsz48.svg"
+//       alt=""
+//       class="avatar"
+//     />
+//     <h2 class="userName">UserName</h2>
+//   </div>
+//   <div class="post__message--container">
+//     <p>
+//       her skal post meldingingereldingermeldinger eldinge rmeldin4gere
+//       ldingdingereldi55ng dingereldingdingerelding dingereldinger
+//     </p>
+//     <i class="material-icons"> thumb_up </i>
+//   </div>
+// </div>
+// </section>
+// <section class="main__post--wrapper">
+// <div class="main__post--container">
+//   <div class="post__user">
+//     <img
+//       src="./svg/person_FILL1_wght400_GRAD0_opsz48.svg"
+//       alt=""
+//       class="avatar"
+//     />
+//     <h2 class="userName">UserName</h2>
+//   </div>
+//   <div class="post__message--container">
+//     <p>
+//       her skal post meldingingereldingermeldinger eldinge rmeldin4gere
+//       ldingdingereldi55ng dingereldingdingerelding dingereldinger
+//     </p>
+//     <i class="material-icons"> thumb_up </i>
+//   </div>
+//   <div class="container__comments">
+//     <div class="comments__post">
+//       <div class="post__user">
+//         <img
+//           src="./svg/person_FILL1_wght400_GRAD0_opsz48.svg"
+//           alt=""
+//           class="avatar"
+//         />
+//         <h2 class="userName">UserName</h2>
+//       </div>
+//       <div class="post__message--container">
+//         <p>kommentar til post kommentar</p>
+//         <i class="material-icons"> thumb_up </i>
+//       </div>
+//     </div>
+//   </div>
+// </div> --></section>
