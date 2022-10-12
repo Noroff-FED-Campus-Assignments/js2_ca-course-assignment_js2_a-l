@@ -14,4 +14,4 @@ export const postUrl = `${apiBaseUrl}/api/v1/social/posts`;
 // postApiCall(registerUserUrl, postData);
 loginUser(loginUrl, loginData);
 // ApicallWithToken(postUrl, fetchOptions);
-// homePageContent(ApicallWithToken);
+homePageContent(ApicallWithToken);
