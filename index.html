@@ -8,6 +8,7 @@
         <link rel="stylesheet" href="/css/styles.css" />
         <link rel="icon" href="data:;base64,=" />
         <script src="./js/scripts.mjs" type="module"></script>
+        <script src="./js/components/login.mjs" type="module"></script>
         <title>The community</title>
     </head>
     <body>
@@ -17,14 +18,14 @@
         </header>
         <main>
             <section class="form__wrapper">
-                <form class="login__form" id="sub__login">
+                <form class="login__form" id="form__login">
                     <h2>Welcome to The Communuity</h2>
                     <label>
                         Email
                         <input
                             type="text"
                             placeholder="Email"
-                            name="useremail"
+                            name="email"
                             id="user__email"
                             class="focus__email"
                         />
@@ -34,7 +35,7 @@
                         <input
                             type="password"
                             placeholder="Password"
-                            name="Password"
+                            name="password"
                             id="user__password"
                         />
                     </label>

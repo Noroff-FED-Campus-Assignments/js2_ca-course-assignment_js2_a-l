@@ -1,3 +1,7 @@
+// import { loginUser } from "./apicall.mjs";
+
+import { loginUser } from "./apicall.mjs";
+
 const showReg = document.getElementById("show__reg__btn");
 const loginBtn = document.getElementById("login__btn");
 const backBtn = document.getElementById("back__btn");
@@ -10,44 +14,46 @@ const regFocus = document.querySelector(".reg__focus");
 loginFocus.focus();
 // switching forms
 showReg.addEventListener("click", (e) => {
-  e.preventDefault();
-  regForm.style.display = "flex";
-  loginForm.style.display = "none";
-  regFocus.focus();
+    e.preventDefault();
+    regForm.style.display = "flex";
+    loginForm.style.display = "none";
+    regFocus.focus();
 });
 
 const registerSubmit = document.getElementById("sub__register");
-const loginSubmit = document.getElementById("sub__login");
+const formLogin = document.getElementById("form__login");
 // register user
-regBtn.addEventListener("click", (e) => {
-  e.preventDefault();
-  const payload = new FormData(registerSubmit);
-  console.log(payload);
-  fetch(url, {
-    method: "POST",
-    body: payload,
-  });
-  // .then((response) => response.json())
-  // .then((data) => console.log(data));
-});
+// regBtn.addEventListener("click", (e) => {
+//     e.preventDefault();
+//     const payload = new FormData(registerSubmit);
+//     console.log(payload);
+//     // fetch(url, {
+//     //     method: "POST",
+//     //     body: payload,
+//     // });
+//     // .then((response) => response.json())
+//     // .then((data) => console.log(data));
+// });
 
-// login
-loginBtn.addEventListener("click", (e) => {
-  e.preventDefault();
-  const payload = new FormData(loginSubmit);
-  console.log(payload);
-  fetch(url, {
-    method: "POST",
-    body: payload,
-  });
-  // .then((response) => response.json())
-  // .then((data) => console.log(data));
+const apiBaseUrl = "https://nf-api.onrender.com";
+const loginUrl = `${apiBaseUrl}/api/v1/social/auth/login`;
+formLogin.addEventListener("submit", async (e) => {
+    e.preventDefault();
+    const formData = new FormData(formLogin);
+    console.log(formData);
+    const formDataSeri = Object.fromEntries(formData);
+    console.log(formDataSeri);
+    try {
+        await loginUser(loginUrl, {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json",
+            },
+            body: JSON.stringify(formDataSeri),
+        });
+        window.location.replace("/home.html");
+    } catch (error) {
+        console.log(error);
+        // alert("Error");
+    }
 });
-
-// async click
-async function handleLogin(e) {
-  e.preventDefault();
-  const payload = new FormData(loginSubmit);
-  console.log(payload);
-  await fetch();
-}
