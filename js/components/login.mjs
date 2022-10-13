@@ -19,21 +19,13 @@ showReg.addEventListener("click", (e) => {
     loginForm.style.display = "none";
     regFocus.focus();
 });
+backBtn.addEventListener("click", (e) => {
+    e.preventDefault();
+    regForm.style.display = "none";
+    loginForm.style.display = "flex";
+});
 
-const registerSubmit = document.getElementById("sub__register");
 const formLogin = document.getElementById("form__login");
-// register user
-// regBtn.addEventListener("click", (e) => {
-//     e.preventDefault();
-//     const payload = new FormData(registerSubmit);
-//     console.log(payload);
-//     // fetch(url, {
-//     //     method: "POST",
-//     //     body: payload,
-//     // });
-//     // .then((response) => response.json())
-//     // .then((data) => console.log(data));
-// });
 
 const apiBaseUrl = "https://nf-api.onrender.com";
 const loginUrl = `${apiBaseUrl}/api/v1/social/auth/login`;
