@@ -14,15 +14,15 @@ const regFocus = document.querySelector(".reg__focus");
 loginFocus.focus();
 // switching forms
 showReg.addEventListener("click", (e) => {
-    e.preventDefault();
-    regForm.style.display = "flex";
-    loginForm.style.display = "none";
-    regFocus.focus();
+  e.preventDefault();
+  regForm.style.display = "flex";
+  loginForm.style.display = "none";
+  regFocus.focus();
 });
 backBtn.addEventListener("click", (e) => {
-    e.preventDefault();
-    regForm.style.display = "none";
-    loginForm.style.display = "flex";
+  e.preventDefault();
+  regForm.style.display = "none";
+  loginForm.style.display = "flex";
 });
 
 const formLogin = document.getElementById("form__login");
