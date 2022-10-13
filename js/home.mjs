@@ -38,12 +38,14 @@ export async function homePageContent(method) {
     }
 }
 
-// {
-/* <div>
-       <button class="btn__edit--post">edit</button>
-       <button class="btn__delete--post">delete</button>
-       </div> */
-// }
+
+{
+  /* <div>
+                                      <button class="btn__edit--post">edit</button>
+                                      <button class="btn__delete--post">delete</button>
+                                      </div> */
+}
+
 
 // <!--
 // <div class="main__post--container">
