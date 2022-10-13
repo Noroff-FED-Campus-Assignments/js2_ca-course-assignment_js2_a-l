@@ -1,81 +1,83 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description" content="" />
-    <meta name="keywords" content="" />
-    <link rel="stylesheet" href="/css/styles.css" />
-    <link rel="icon" href="data:;base64,=" />
-    <script src="./js/scripts.mjs" type="module"></script>
-    <script src="./js/components/login.mjs" type="module"></script>
-    <script src="./js/components/registration.mjs" type="module"></script>
-    <title>The community</title>
-  </head>
-  <body>
-    <header class="login__header">
-      <img src="./svg/logo/logo.png" alt="" />
-      <h1>The Community</h1>
-    </header>
-    <main>
-      <section class="form__wrapper">
-        <form class="login__form" id="form__login">
-          <h2>Welcome to The Communuity</h2>
-          <label>
-            Email
-            <input
-              type="text"
-              placeholder="Email"
-              name="email"
-              id="user__email"
-              class="focus__email"
-            />
-          </label>
-          <label>
-            Password
-            <input
-              type="password"
-              placeholder="Password"
-              name="password"
-              id="user__password"
-            />
-          </label>
-          <section class="form__btns">
-            <button type="submit" id="show__reg__btn">Register</button>
-            <button type="submit" id="login__btn">Login</button>
-          </section>
-        </form>
-        <form class="register__form hidden" id="sub__register">
-          <h2>Register to The Communuity</h2>
-          <label>
-            Name
-            <input
-              type="text"
-              placeholder="my_username"
-              name="name"
-              id="user__name"
-              class="reg__focus"
-            />
-          </label>
-          <label>
-            Email
-            <input
-              type="text"
-              placeholder="Email"
-              name="email"
-              id="user__email"
-            />
-          </label>
-          <label>
-            Password
-            <input
-              type="password"
-              placeholder="Password"
-              name="password"
-              id="user__password"
-            />
-          </label>
-          <!-- <label>
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta name="description" content="" />
+        <meta name="keywords" content="" />
+        <link rel="stylesheet" href="/css/styles.css" />
+        <link rel="icon" href="data:;base64,=" />
+        <script src="./js/scripts.mjs" type="module"></script>
+        <script src="./js/components/login.mjs" type="module"></script>
+        <script src="./js/components/registration.mjs" type="module"></script>
+        <title>The community</title>
+    </head>
+    <body>
+        <header class="login__header">
+            <img src="./svg/logo/logo.png" alt="" />
+            <h1>The Community</h1>
+        </header>
+        <main>
+            <section class="form__wrapper">
+                <form class="login__form" id="form__login">
+                    <h2>Welcome to The Communuity</h2>
+                    <label>
+                        Email
+                        <input
+                            type="text"
+                            placeholder="Email"
+                            name="email"
+                            id="user__email"
+                            class="focus__email"
+                        />
+                    </label>
+                    <label>
+                        Password
+                        <input
+                            type="password"
+                            placeholder="Password"
+                            name="password"
+                            id="user__password"
+                        />
+                    </label>
+                    <section class="form__btns">
+                        <button type="submit" id="show__reg__btn">
+                            Register
+                        </button>
+                        <button type="submit" id="login__btn">Login</button>
+                    </section>
+                </form>
+                <form class="register__form hidden" id="sub__register">
+                    <h2>Register to The Communuity</h2>
+                    <label>
+                        Name
+                        <input
+                            type="text"
+                            placeholder="my_username"
+                            name="name"
+                            id="user__name"
+                            class="reg__focus"
+                        />
+                    </label>
+                    <label>
+                        Email
+                        <input
+                            type="text"
+                            placeholder="Email"
+                            name="email"
+                            id="user__email"
+                        />
+                    </label>
+                    <label>
+                        Password
+                        <input
+                            type="password"
+                            placeholder="Password"
+                            name="password"
+                            id="user__password"
+                        />
+                    </label>
+                    <!-- <label>
             Avatar (Optional)
             <input type="text" name="avatar" id="user__avatar" />
           </label>
@@ -83,16 +85,18 @@
             >Banner (Optional)
             <input type="text" name="banner" id="user__banner"
           /></label> -->
-          <section class="form__btns">
-            <button type="submit" id="back__btn">back</button>
-            <button type="submit" id="register__btn">Register</button>
-          </section>
-        </form>
-      </section>
-    </main>
-    <footer>
-      <img src="./svg/logo/logo.png" alt="" />
-      <h2>The Community</h2>
-    </footer>
-  </body>
+                    <section class="form__btns">
+                        <button type="submit" id="back__btn">back</button>
+                        <button type="submit" id="register__btn">
+                            Register
+                        </button>
+                    </section>
+                </form>
+            </section>
+        </main>
+        <footer>
+            <img src="./svg/logo/logo.png" alt="" />
+            <h2>The Community</h2>
+        </footer>
+    </body>
 </html>
