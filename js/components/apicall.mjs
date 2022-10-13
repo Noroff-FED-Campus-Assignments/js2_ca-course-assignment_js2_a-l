@@ -1,10 +1,9 @@
-export async function postApiCall(url, option = {}) {
+export async function registerApiCall(url, option = {}) {
   try {
     const response = await fetch(url, option);
     console.log(response);
     const json = await response.json();
     console.log(json);
-    return json;
   } catch (error) {
     console.log(error);
   }
