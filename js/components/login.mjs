@@ -43,9 +43,10 @@ formLogin.addEventListener("submit", async (e) => {
             },
             body: JSON.stringify(formDataSeri),
         });
-        window.location.replace("/home.html");
     } catch (error) {
         console.log(error);
         // alert("Error");
+    } finally {
+        window.location.replace("/home.html");
     }
 });
