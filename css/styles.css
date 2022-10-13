@@ -438,6 +438,33 @@ a {
   color: #e5eaef;
 }
 
+.edit__form {
+  display: none;
+}
+
+.show {
+  display: block;
+}
+
+.media__container {
+  width: 100%;
+  background-color: #7194c1;
+  border-radius: 60px 10px 10px 10px;
+  height: 150px;
+}
+.media__container .avatar__image {
+  position: absolute;
+  max-width: 125px;
+  height: auto;
+  border-radius: 50%;
+}
+.media__container .banner__image {
+  border-radius: 60px 10px 10px 10px;
+  width: 100%;
+  height: 150px;
+  object-fit: cover;
+}
+
 .main__post--wrapper {
   display: flex;
   width: 100%;

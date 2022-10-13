@@ -1,179 +1,221 @@
 .main__profile {
-    // background-color: getColour(Light-blue);
-    margin: 20px 10% 20px;
+  // background-color: getColour(Light-blue);
+  margin: 20px 10% 20px;
+  color: white;
+  display: grid;
+  grid-template-rows: auto;
+  row-gap: 10px;
+
+  & .main_profile > * {
+    background-color: getColour(Light-blue);
+  }
+  & ul {
+    list-style-type: none;
     color: white;
+  }
+  & li {
+    list-style-type: none;
+    color: white;
+  }
+
+  // profile picture and banner
+
+  & .profile__banner {
+    color: white;
+    border-radius: 10px;
+    position: relative;
+    height: 125px;
+    border-top-left-radius: 60px;
+    background-color: getColour(primary);
+  }
+
+  & .profile__avatar {
+    color: white;
+    height: 120px;
+    width: 120px;
+    border-radius: 50%;
+    background-color: white;
+    position: absolute;
+    display: block;
+    left: -1px;
+  }
+  & .profile__avatar__small {
+    color: white;
+    height: 50px;
+    width: 50px;
+    border-radius: 50%;
+    background-color: white;
+    position: relative;
+    display: block;
+  }
+
+  & #avatar__img {
+    // position: absolute;
+    height: 120px;
+    width: 120px;
+  }
+
+  // profile
+
+  & .profile__info {
+    color: white;
+  }
+
+  & .profile__list {
+    list-style-type: none;
+  }
+  & .profile__edit {
+    color: white;
+  }
+
+  // Followers and settings
+  & .profile__followers {
+    width: 100%;
+    border-radius: 10px;
     display: grid;
-    grid-template-rows: auto;
-    row-gap: 10px;
+    grid-template-columns: auto;
+    grid-template-areas: ". info follow .";
+    background-color: getColour(primary);
+  }
+  & .profile__info {
+    color: white;
+    grid-area: info;
+    margin-bottom: 10px;
+  }
+  & .profile__list {
+    color: white;
+  }
+  & .profile__edit {
+    color: white;
+  }
+  & .btn__edit {
+    width: 50px;
+    height: 20px;
+  }
+  & .btn__edit:hover {
+    background-color: transparent;
+  }
+  & .profile__follow {
+    color: white;
+    grid-area: follow;
+  }
+  & .profile__follow a {
+    text-decoration: none;
+    color: white;
+  }
+  & .profile__follow a:hover {
+    color: black;
+  }
 
-    & .main_profile > * {
-        background-color: getColour(Light-blue);
-    }
-    & ul {
-        list-style-type: none;
-        color: white;
-    }
-    & li {
-        list-style-type: none;
-        color: white;
-    }
-
-    // profile picture and banner
-
-    & .profile__banner {
-        color: white;
-        border-radius: 10px;
-        position: relative;
-        height: 125px;
-        border-top-left-radius: 60px;
-        background-color: getColour(primary);
-    }
-
-    & .profile__avatar {
-        color: white;
-        height: 120px;
-        width: 120px;
-        border-radius: 50%;
-        background-color: white;
-        position: absolute;
-        display: block;
-        left: -1px;
-    }
-    & .profile__avatar__small {
-        color: white;
-        height: 50px;
-        width: 50px;
-        border-radius: 50%;
-        background-color: white;
-        position: relative;
-        display: block;
-    }
-
-    & #avatar__img {
-        // position: absolute;
-        height: 120px;
-        width: 120px;
-    }
-
-    // profile
-
-    & .profile__info {
-        color: white;
-    }
-
-    & .profile__list {
-        list-style-type: none;
-    }
-    & .profile__edit {
-        color: white;
-    }
-
-    // Followers and settings
-    & .profile__followers {
-        width: 100%;
-        border-radius: 10px;
-        display: grid;
-        grid-template-columns: auto;
-        grid-template-areas: ". info follow .";
-        background-color: getColour(primary);
-    }
-    & .profile__info {
-        color: white;
-        grid-area: info;
-        margin-bottom: 10px;
-    }
-    & .profile__list {
-        color: white;
-    }
-    & .profile__edit {
-        color: white;
-    }
-    & .btn__edit {
-        width: 50px;
-        height: 20px;
-    }
-    & .btn__edit:hover {
-        background-color: transparent;
-    }
-    & .profile__follow {
-        color: white;
-        grid-area: follow;
-    }
-    & .profile__follow a {
-        text-decoration: none;
-        color: white;
-    }
-    & .profile__follow a:hover {
-        color: black;
-    }
-
-    // feeds
-    & .profile__feed {
-        border-radius: 10px;
-        background-color: getColour(primary);
-    }
-    & .profile__feed textarea {
-        width: 60%;
-        height: 60px;
-        border: transparent;
-        border-radius: 5px;
-        padding: 5px;
-    }
-    & #small {
-        height: 50px;
-        width: 50px;
-    }
-    & .profile__avatar .post {
-        height: 50px;
-        width: 50px;
-    }
-    & .avatar__img .small {
-        height: 50px;
-        width: 50px;
-    }
-    // feed posts
-    & .feed__post {
-        color: white;
-        margin: 10px 0;
-    }
-    & .feed__post > div {
-        margin: 10px 0 10px 30px;
-    }
-    & .feed__like {
-        background-color: transparent;
-        border: none;
-        width: 10px;
-        height: 10px;
-    }
-    & .feed__like:hover {
-        color: white;
-    }
-    & .feed_like img {
-        color: white;
-    }
-    & .feed__post__msg {
-        color: white;
-    }
-    & .feed__post__action {
-        color: white;
-    }
-    & .feed__post__reaction {
-        color: white;
-    }
-    & .feed__post__comment {
-        color: white;
-    }
-    & .comment__btn {
-        height: 20px;
-        width: 60px;
-    }
-    & .comment__btn:hover {
-        background-color: transparent;
-    }
-    & button {
-        border: none;
-        border-radius: 10px;
-        background-color: getColour(Light-blue);
-        color: getColour(bg-gray);
-    }
+  // feeds
+  & .profile__feed {
+    border-radius: 10px;
+    background-color: getColour(primary);
+  }
+  & .profile__feed textarea {
+    width: 60%;
+    height: 60px;
+    border: transparent;
+    border-radius: 5px;
+    padding: 5px;
+  }
+  & #small {
+    height: 50px;
+    width: 50px;
+  }
+  & .profile__avatar .post {
+    height: 50px;
+    width: 50px;
+  }
+  & .avatar__img .small {
+    height: 50px;
+    width: 50px;
+  }
+  // feed posts
+  & .feed__post {
+    color: white;
+    margin: 10px 0;
+  }
+  & .feed__post > div {
+    margin: 10px 0 10px 30px;
+  }
+  & .feed__like {
+    background-color: transparent;
+    border: none;
+    width: 10px;
+    height: 10px;
+  }
+  & .feed__like:hover {
+    color: white;
+  }
+  & .feed_like img {
+    color: white;
+  }
+  & .feed__post__msg {
+    color: white;
+  }
+  & .feed__post__action {
+    color: white;
+  }
+  & .feed__post__reaction {
+    color: white;
+  }
+  & .feed__post__comment {
+    color: white;
+  }
+  & .comment__btn {
+    height: 20px;
+    width: 60px;
+  }
+  & .comment__btn:hover {
+    background-color: transparent;
+  }
+  & button {
+    border: none;
+    border-radius: 10px;
+    background-color: getColour(Light-blue);
+    color: getColour(bg-gray);
+  }
 }
+
+.edit__form {
+  display: none;
+}
+.show {
+  display: block;
+}
+
+// dette er det nye for banner og avatar skrevet av albert
+
+.media__container {
+  width: 100%;
+
+  background-color: getColour(Light-blue);
+  border-radius: 60px 10px 10px 10px;
+  height: 150px;
+
+  .avatar__image {
+    position: absolute;
+    max-width: 125px;
+    height: auto;
+    border-radius: 50%;
+  }
+  .banner__image {
+    border-radius: 60px 10px 10px 10px;
+    width: 100%;
+    height: 150px;
+    object-fit: cover;
+  }
+}
+
+// `<div class="avatar__img--container">
+// <img class="avatar__image" src="${mediaData.avatar}" alt="Profile picture" />
+// <img class="banner__image"  src="${mediaData.banner}" alt="Profile picture" />
+// </div>`;
+
+// `<div class="avatar__img--container">
+//     <img src="${mediaData.avatar}" alt="Profile picture" />
+// </div>
+// <div class="banner__img--container">
+//     <img src="${mediaData.banner}" alt="Profile picture" />
+// </div>`;
