@@ -11,7 +11,7 @@
             rel="stylesheet"
         />
         <link rel="icon" href="data:;base64,=" />
-        <script src="./js/scripts.mjs" type="module"></script>
+        <!-- <script src="./js/scripts.mjs" type="module"></script> -->
         <script src="./js/components/createComment.mjs" type="module"></script>
         <title>Home</title>
     </head>
@@ -53,32 +53,7 @@
             </nav>
         </header>
         <main>
-            <main class="home__main">
-                <section class="post__message">
-                    <div>
-                        <img
-                            src="./svg/person_FILL1_wght400_GRAD0_opsz48.svg"
-                            alt=""
-                            class="avatar"
-                        />
-                        <h2 class="userName">UserName</h2>
-                    </div>
-                    <form class="status__update">
-                        <label for="status">
-                            <textarea
-                                name="body"
-                                id="status"
-                                cols="30"
-                                rows="3"
-                                placeholder="What’s on your mind? ......"
-                            ></textarea>
-                        </label>
-                        <button class="status__btn" type="submit">
-                            Comment
-                        </button>
-                    </form>
-                </section>
-            </main>
+            <section class="main__post--wrapper"></section>
         </main>
         <footer>
             <img src="./svg/logo/logo.png" alt="" />

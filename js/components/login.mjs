@@ -30,23 +30,23 @@ const formLogin = document.getElementById("form__login");
 const apiBaseUrl = "https://nf-api.onrender.com";
 const loginUrl = `${apiBaseUrl}/api/v1/social/auth/login`;
 formLogin.addEventListener("submit", async (e) => {
-  e.preventDefault();
-  const formData = new FormData(formLogin);
-  console.log(formData);
-  const formDataSeri = Object.fromEntries(formData);
-  console.log(formDataSeri);
-  try {
-    await loginUser(loginUrl, {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify(formDataSeri),
-    });
-  } catch (error) {
-    console.log(error);
-    // alert("Error");
-  } finally {
-    window.location.replace("/home.html");
-  }
+    e.preventDefault();
+    const formData = new FormData(formLogin);
+    console.log(formData);
+    const formDataSeri = Object.fromEntries(formData);
+    console.log(formDataSeri);
+    try {
+        await loginUser(loginUrl, {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json",
+            },
+            body: JSON.stringify(formDataSeri),
+        });
+    } catch (error) {
+        console.log(error);
+        // alert("Error");
+    } finally {
+        window.location.replace("/home.html");
+    }
 });
