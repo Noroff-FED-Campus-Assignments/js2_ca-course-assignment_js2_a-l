@@ -15,6 +15,8 @@ export async function loginUser(url, option = {}) {
     const response = await fetch(url, option);
     const json = await response.json();
     const accessToken = json.accessToken;
+    const userName = json.name;
+    localStorage.setItem("userName", userName);
     localStorage.setItem("accessToken", accessToken);
   } catch (error) {
     console.log(error);

@@ -13,14 +13,14 @@ export async function homePageContent(method) {
       const post = data[i];
       // console.log(post);
       homeContainer.innerHTML += `<div class="main__post--container">
-                                     <div class="post__user">
+                                     <a href=""></a><div class="post__user">
                                         <img
                                         src="${post.author.avatar}"
                                         alt="avatar from the user"
                                         class="avatar"
                                        />
-                                        <h2 class="userName">${post.author.name}</h2>
-                                        <a href="">${post.title}</a>
+                                        <h2 class="userName"><a href="">${post.author.name}</a></h2>
+                                        <h3>${post.title}</h3>
                                       </div>
                                       <div class="post__message--container">
                                           <p>
@@ -28,11 +28,22 @@ export async function homePageContent(method) {
                                           </p>
                                           <i class="material-icons"> thumb_up </i>
                                       </div>
+                                      
+                                      <div>
+                                      <a href="/comment.html?id=${post.id}" class="btn__comment--post">comment</a>
+                                      </div>
                                   </div>`;
     }
   } catch (error) {
     console.log(error);
   }
+}
+
+{
+  /* <div>
+                                      <button class="btn__edit--post">edit</button>
+                                      <button class="btn__delete--post">delete</button>
+                                      </div> */
 }
 
 // <!--
