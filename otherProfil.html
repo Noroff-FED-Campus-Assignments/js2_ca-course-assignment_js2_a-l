@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="" />
+    <meta name="keywords" content="" />
+    <link rel="stylesheet" href="/css/styles.css" />
+    <link
+      href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet"
+    />
+    <link rel="icon" href="data:;base64,=" />
+    <!-- <script defer src="./js/scripts.mjs"></script> -->
+    <script type="module" src="./js/components/follow.mjs"></script>
+
+    <title>Profile</title>
+  </head>
+  <body>
+    <header>
+      <nav class="navbar">
+        <a href="./home.html" class="navbar__branding"
+          ><img src="./svg/logo/logo.png" alt="" /> The Community</a
+        >
+        <ul class="navbar__menu">
+          <li class="navbar__item">
+            <a class="navbar__link" href="./home.html"
+              ><i class="material-icons"> home </i>Home</a
+            >
+          </li>
+          <li class="navbar__item">
+            <a class="navbar__link" href="./profile.html"
+              ><i class="material-icons"> person </i>Profile</a
+            >
+          </li>
+          <li class="navbar__item">
+            <form class="navbar__from" action="">
+              <input type="text" placeholder="Search..." name="search" />
+              <button type="submit">
+                <i class="material-icons"> search </i>
+              </button>
+            </form>
+          </li>
+        </ul>
+        <div class="hamburger">
+          <span class="hamburger__bar"></span>
+          <span class="hamburger__bar"></span>
+          <span class="hamburger__bar"></span>
+        </div>
+      </nav>
+    </header>
+    <main class="profil__main">
+      <div class="main__profile">
+        <div class="media__container"></div>
+        <section class="profile__edit" id="">
+          <button class="btn__edit">Edit</button>
+          <form action="" class="edit__form">
+            <label for="avatar">
+              <input type="text" name="avatar" placeholder="avatar" /> </label
+            ><label for="banner">
+              <input type="text" name="banner" placeholder="banner" />
+            </label>
+            <button class="upt__btn" type="submit">edit profil</button>
+          </form>
+        </section>
+        <section class="follows__container">
+          <div class="follow">
+            <button class="follow__btn">follow</button
+            ><button class="unfollow__btn">unfollow</button>
+          </div>
+        </section>
+      </div>
+    </main>
+    <footer>
+      <img src="./svg/logo/logo.png" alt="" />
+      <h2>The Community</h2>
+    </footer>
+  </body>
+</html>
