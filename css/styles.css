@@ -275,175 +275,18 @@ a {
   color: #e5eaef;
 }
 
-.main__profile {
-  margin: 20px 10% 20px;
-  color: white;
-  display: grid;
-  grid-template-rows: auto;
-  row-gap: 10px;
-}
-.main__profile .main_profile > * {
-  background-color: #7194c1;
-}
-.main__profile ul {
-  list-style-type: none;
-  color: white;
-}
-.main__profile li {
-  list-style-type: none;
-  color: white;
-}
-.main__profile .profile__banner {
-  color: white;
-  border-radius: 10px;
-  position: relative;
-  height: 125px;
-  border-top-left-radius: 60px;
-  background-color: #002e6b;
-}
-.main__profile .profile__avatar {
-  color: white;
-  height: 120px;
-  width: 120px;
-  border-radius: 50%;
-  background-color: white;
-  position: absolute;
-  display: block;
-  left: -1px;
-}
-.main__profile .profile__avatar__small {
-  color: white;
-  height: 50px;
-  width: 50px;
-  border-radius: 50%;
-  background-color: white;
-  position: relative;
-  display: block;
-}
-.main__profile #avatar__img {
-  height: 120px;
-  width: 120px;
-}
-.main__profile .profile__info {
-  color: white;
-}
-.main__profile .profile__list {
-  list-style-type: none;
-}
-.main__profile .profile__edit {
-  color: white;
-}
-.main__profile .profile__followers {
-  width: 100%;
-  border-radius: 10px;
-  display: grid;
-  grid-template-columns: auto;
-  grid-template-areas: ". info follow .";
-  background-color: #002e6b;
-}
-.main__profile .profile__info {
-  color: white;
-  grid-area: info;
-  margin-bottom: 10px;
-}
-.main__profile .profile__list {
-  color: white;
-}
-.main__profile .profile__edit {
-  color: white;
-}
-.main__profile .btn__edit {
-  width: 50px;
-  height: 20px;
-}
-.main__profile .btn__edit:hover {
-  background-color: transparent;
-}
-.main__profile .profile__follow {
-  color: white;
-  grid-area: follow;
-}
-.main__profile .profile__follow a {
-  text-decoration: none;
-  color: white;
-}
-.main__profile .profile__follow a:hover {
-  color: black;
-}
-.main__profile .profile__feed {
-  border-radius: 10px;
-  background-color: #002e6b;
-}
-.main__profile .profile__feed textarea {
-  width: 60%;
-  height: 60px;
-  border: transparent;
-  border-radius: 5px;
-  padding: 5px;
-}
-.main__profile #small {
-  height: 50px;
-  width: 50px;
-}
-.main__profile .profile__avatar .post {
-  height: 50px;
-  width: 50px;
-}
-.main__profile .avatar__img .small {
-  height: 50px;
-  width: 50px;
-}
-.main__profile .feed__post {
-  color: white;
-  margin: 10px 0;
-}
-.main__profile .feed__post > div {
-  margin: 10px 0 10px 30px;
-}
-.main__profile .feed__like {
-  background-color: transparent;
-  border: none;
-  width: 10px;
-  height: 10px;
-}
-.main__profile .feed__like:hover {
-  color: white;
-}
-.main__profile .feed_like img {
-  color: white;
-}
-.main__profile .feed__post__msg {
-  color: white;
-}
-.main__profile .feed__post__action {
-  color: white;
-}
-.main__profile .feed__post__reaction {
-  color: white;
-}
-.main__profile .feed__post__comment {
-  color: white;
-}
-.main__profile .comment__btn {
-  height: 20px;
-  width: 60px;
-}
-.main__profile .comment__btn:hover {
-  background-color: transparent;
-}
-.main__profile button {
-  border: none;
-  border-radius: 10px;
-  background-color: #7194c1;
-  color: #e5eaef;
-}
-
 .edit__form {
   display: none;
 }
 
 .show {
   display: block;
+}
+
+.profil__main {
+  width: 100%;
+  max-width: 800px;
+  margin: 100px auto;
 }
 
 .media__container {
