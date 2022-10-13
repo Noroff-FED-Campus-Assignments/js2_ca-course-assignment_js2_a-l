@@ -19,7 +19,7 @@ registrationForm.addEventListener("submit", async (e) => {
       body: JSON.stringify(formDataSerialized),
     });
   } catch (error) {
-    console.log(error);
+    console.log("register apicall noe galt");
   } finally {
     // window.location.reload();
   }

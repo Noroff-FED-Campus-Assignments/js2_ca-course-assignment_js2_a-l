@@ -14,15 +14,15 @@ const regFocus = document.querySelector(".reg__focus");
 loginFocus.focus();
 // switching forms
 showReg.addEventListener("click", (e) => {
-    e.preventDefault();
-    regForm.style.display = "flex";
-    loginForm.style.display = "none";
-    regFocus.focus();
+  e.preventDefault();
+  regForm.style.display = "flex";
+  loginForm.style.display = "none";
+  regFocus.focus();
 });
 backBtn.addEventListener("click", (e) => {
-    e.preventDefault();
-    regForm.style.display = "none";
-    loginForm.style.display = "flex";
+  e.preventDefault();
+  regForm.style.display = "none";
+  loginForm.style.display = "flex";
 });
 
 const formLogin = document.getElementById("form__login");
@@ -30,22 +30,23 @@ const formLogin = document.getElementById("form__login");
 const apiBaseUrl = "https://nf-api.onrender.com";
 const loginUrl = `${apiBaseUrl}/api/v1/social/auth/login`;
 formLogin.addEventListener("submit", async (e) => {
-    e.preventDefault();
-    const formData = new FormData(formLogin);
-    console.log(formData);
-    const formDataSeri = Object.fromEntries(formData);
-    console.log(formDataSeri);
-    try {
-        await loginUser(loginUrl, {
-            method: "POST",
-            headers: {
-                "Content-Type": "application/json",
-            },
-            body: JSON.stringify(formDataSeri),
-        });
-        window.location.replace("/home.html");
-    } catch (error) {
-        console.log(error);
-        // alert("Error");
-    }
+  e.preventDefault();
+  const formData = new FormData(formLogin);
+  console.log(formData);
+  const formDataSeri = Object.fromEntries(formData);
+  console.log(formDataSeri);
+  try {
+    await loginUser(loginUrl, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(formDataSeri),
+    });
+  } catch (error) {
+    console.log(error);
+    // alert("Error");
+  } finally {
+    window.location.replace("/home.html");
+  }
 });
