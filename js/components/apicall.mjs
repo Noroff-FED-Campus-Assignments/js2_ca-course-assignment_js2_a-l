@@ -3,7 +3,9 @@ export async function registerApiCall(url, option = {}) {
     const response = await fetch(url, option);
     console.log(response);
     const json = await response.json();
+    console.log("se her");
     console.log(json);
+    console.log("se her");
   } catch (error) {
     console.log(error);
   }
