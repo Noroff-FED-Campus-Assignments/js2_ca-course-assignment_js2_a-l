@@ -61,8 +61,8 @@ async function profilApiCall() {
     const mediaData = await response.json();
     console.log(mediaData);
     mediaContainer.innerHTML = `<div class="avatar__img--container">
-                                    <img class="avatar__image" src="${mediaData.avatar}" alt="Profile picture" />
-                                    <img class="banner__image"  src="${mediaData.banner}" alt="Profile picture" />
+                                    <img class="avatar__image" src="${mediaData.avatar}" onerror="this.src = './svg/logo/logo.png';" alt="Profile picture" />
+                                    <img class="banner__image"  src="${mediaData.banner}" onerror="this.src = './svg/logo/logo.png';" alt="Profile picture" />
                                 </div>`;
   } catch (error) {
     console.log("feil i profilapicall");

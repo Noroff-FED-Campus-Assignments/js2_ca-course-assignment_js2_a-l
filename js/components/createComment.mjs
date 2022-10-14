@@ -11,9 +11,11 @@ const params = new URLSearchParams(queryString);
 // console.log(params);
 
 const id = params.get("id");
+
 // console.log(id);
 const test = `https://nf-api.onrender.com/api/v1/social/posts/${id}?_author=true&_reactions=true&_comments=true`;
 const addComment = `https://nf-api.onrender.com/api/v1/social/posts/${id}/comment`;
+
 const commentEntryUrl = `https://nf-api.onrender.com/api/v1/social/posts/${id}?_author=true&_reactions=true&_comments=true`;
 const commentForm = document.querySelector(".comment__form");
 const userName = localStorage.getItem("userName");
@@ -21,14 +23,14 @@ const token = localStorage.getItem("accessToken");
 const commentContainer = document.querySelector(".container__comments");
 
 async function addCommentApiCall(url, option = {}) {
-    try {
-        const response = await fetch(url, option);
-        console.log(response);
-        const data = await response.json();
-        console.log(data);
-    } catch (error) {
-        console.log(error);
-    }
+  try {
+    const response = await fetch(url, option);
+    console.log(response);
+    const data = await response.json();
+    console.log(data);
+  } catch (error) {
+    console.log(error);
+  }
 }
 
 async function getPostById() {
@@ -47,11 +49,12 @@ async function getPostById() {
     } finally {
         showCommets();
     }
+
 }
 getPostById();
 
 function createHtml(data) {
-    commentWrapper.innerHTML = `<div class="main__post--container">
+  commentWrapper.innerHTML = `<div class="main__post--container">
                                         <div class="post__user">
                                             <img
                                                 src="${data.author.avatar}"
@@ -85,6 +88,7 @@ function createHtml(data) {
                                         </div>`;
 }
 
+
 async function showCommets() {
     try {
         const response = await fetch(commentEntryUrl, fetchOptions);
@@ -104,6 +108,7 @@ async function showCommets() {
     } catch (error) {
         console.log(error);
     }
+
 }
 
 async function submitMyComment() {

@@ -308,6 +308,26 @@ a {
   object-fit: cover;
 }
 
+.other__container--profile {
+  width: 100%;
+  background-color: #7194c1;
+  border-radius: 60px 10px 10px 10px;
+  height: 150px;
+}
+.other__container--profile .avatar__image {
+  position: absolute;
+  object-fit: cover;
+  max-width: 125px;
+  max-height: 125px;
+  border-radius: 50%;
+}
+.other__container--profile .banner__image {
+  border-radius: 60px 10px 10px 10px;
+  width: 100%;
+  height: 150px;
+  object-fit: cover;
+}
+
 .main__post--wrapper {
   display: flex;
   width: 100%;
