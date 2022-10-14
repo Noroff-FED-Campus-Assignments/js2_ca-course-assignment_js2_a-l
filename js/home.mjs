@@ -8,7 +8,6 @@ const urlPostAuthor =
 export async function homePageContent(method) {
   try {
     const data = await method(urlPostAuthor, fetchOptions);
-
     for (let i = 0; i < 10; i++) {
       const post = data[i];
       // console.log(post);
@@ -26,7 +25,7 @@ export async function homePageContent(method) {
                                             <p>
                                               ${post.body}
                                             </p>
-                                            <i class="material-icons"> thumb_up </i>
+                                            <i class="material-icons react"> thumb_up </i>
                                           </div>
                                           <div>
                                             <a href="/comment.html?id=${post.id}" class="btn__comment--post">comment</a>
@@ -35,15 +34,14 @@ export async function homePageContent(method) {
     }
   } catch (error) {
     console.log(error);
+  } finally {
   }
 }
 
-{
-  /* <div>
+/* <div>
                                       <button class="btn__edit--post">edit</button>
                                       <button class="btn__delete--post">delete</button>
                                       </div> */
-}
 
 // <!--
 // <div class="main__post--container">

@@ -24,62 +24,62 @@ const commentContainer = document.querySelector(".container__comments");
 
 // get delete edit if user === user
 async function getActionContainer() {
-    try {
-        const response = await fetch(commentEntryUrl, fetchOptions);
-        const data = await response.json();
-        console.log(data, "fetch med loop");
-        const name = localStorage.getItem("userName");
-        console.log(name);
-        for (let i = 0; i < data.length; i++) {
-            console.log(name);
-        }
-
-        // console.log(form);
-    } catch (error) {
-        console.log(error);
-    } finally {
-        //
+  try {
+    const response = await fetch(commentEntryUrl, fetchOptions);
+    const data = await response.json();
+    console.log(data, "fetch med loop");
+    const name = localStorage.getItem("userName");
+    console.log(name);
+    for (let i = 0; i < data.length; i++) {
+      console.log(name);
     }
+
+    // console.log(form);
+  } catch (error) {
+    console.log(error);
+  } finally {
+    //
+  }
 }
 // getActionContainer();
 
 async function getPostById() {
-    try {
-        const response = await fetch(commentEntryUrl, fetchOptions);
-        const data = await response.json();
-        // console.log(data);
-        // console.log(data.author.name);
-        // console.log(data.comments);
-        // console.log(currentUser);
-        const postAuthor = data.author.name;
-        const userName = localStorage.getItem("userName");
-        // console.log(userName);
-        if (userName === postAuthor) {
-            createHtml(data);
-            console.log(true);
-        } else {
-            createHtmlNotOwner(data);
-            console.log(false);
-        }
-        // if (userName !== userName) {
-        //     createHtmlNotOwner(data);
-        //     console.log(false);
-        // }
-
-        submitMyComment();
-
-        // console.log(form);
-    } catch (error) {
-        console.log(error);
-    } finally {
-        showCommets();
+  try {
+    const response = await fetch(commentEntryUrl, fetchOptions);
+    const data = await response.json();
+    // console.log(data);
+    // console.log(data.author.name);
+    // console.log(data.comments);
+    // console.log(currentUser);
+    const postAuthor = data.author.name;
+    const userName = localStorage.getItem("userName");
+    // console.log(userName);
+    if (userName === postAuthor) {
+      createHtml(data);
+      console.log(true);
+    } else {
+      createHtmlNotOwner(data);
+      console.log(false);
     }
+    // if (userName !== userName) {
+    //     createHtmlNotOwner(data);
+    //     console.log(false);
+    // }
+
+    submitMyComment();
+
+    // console.log(form);
+  } catch (error) {
+    console.log(error);
+  } finally {
+    showCommets();
+  }
 }
 getPostById();
 
 // user === user
 function createHtml(data) {
-    commentWrapper.innerHTML = `<div class="main__post--container">
+  commentWrapper.innerHTML = `<div class="main__post--container">
                                         <div class="post__user">
                                             <img
                                                 src="${data.author.avatar}"
@@ -121,7 +121,7 @@ function createHtml(data) {
 // user !== user
 
 function createHtmlNotOwner(data) {
-    commentWrapper.innerHTML = `<div class="main__post--container">
+  commentWrapper.innerHTML = `<div class="main__post--container">
                                         <div class="post__user">
                                             <img
                                                 src="${data.author.avatar}"
@@ -156,50 +156,50 @@ function createHtmlNotOwner(data) {
 }
 
 async function showCommets() {
-    try {
-        const response = await fetch(commentEntryUrl, fetchOptions);
-        const data = await response.json();
-        // console.log(data, "show comments");
-        const postCommets = data.comments;
-        // console.log(postCommets);
-        postCommets.forEach((ele) => {
-            commentContainer.innerHTML += `<div class="comment__user">
+  try {
+    const response = await fetch(commentEntryUrl, fetchOptions);
+    const data = await response.json();
+    // console.log(data, "show comments");
+    const postCommets = data.comments;
+    // console.log(postCommets);
+    postCommets.forEach((ele) => {
+      commentContainer.innerHTML += `<div class="comment__user">
                                                 <h2 class="userName">${ele.owner}</h2>
                                             </div
                                             <div class="post__message--container">
                                                 <p>${ele.body}</p>
                                                 <i class="material-icons"> thumb_up </i>
                                             </div>`;
-        });
-    } catch (error) {
-        console.log(error);
-    }
+    });
+  } catch (error) {
+    console.log(error);
+  }
 }
 
 async function submitMyComment() {
-    const submitComment = document.querySelector(".comment__form");
-    submitComment.addEventListener("submit", async (e) => {
-        e.preventDefault();
-        // console.log(submitComment);
-        const payLoad = new FormData(submitComment);
-        const payLoadSerialized = Object.fromEntries(payLoad);
-        try {
-            const response = await fetch(addComment, {
-                method: "POST",
-                headers: {
-                    "Content-Type": "application/json",
-                    Authorization: `Bearer ${token}`,
-                },
-                body: JSON.stringify(payLoadSerialized),
-            });
-            const data = await response.json(payLoadSerialized);
-            // console.log(data);
-        } catch (error) {
-            console.log(error);
-        } finally {
-            showCommets();
-        }
-    });
+  const submitComment = document.querySelector(".comment__form");
+  submitComment.addEventListener("submit", async (e) => {
+    e.preventDefault();
+    // console.log(submitComment);
+    const payLoad = new FormData(submitComment);
+    const payLoadSerialized = Object.fromEntries(payLoad);
+    try {
+      const response = await fetch(addComment, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          Authorization: `Bearer ${token}`,
+        },
+        body: JSON.stringify(payLoadSerialized),
+      });
+      const data = await response.json(payLoadSerialized);
+      // console.log(data);
+    } catch (error) {
+      console.log(error);
+    } finally {
+      showCommets();
+    }
+  });
 }
 
 // user
@@ -223,6 +223,6 @@ async function submitMyComment() {
 
 // delete event
 async function deleteOwnPost() {
-    const deleteBtn = document.querySelector(".deletepost__btn");
-    deleteBtn.addEventListener("click", async (e) => {});
+  const deleteBtn = document.querySelector(".deletepost__btn");
+  deleteBtn.addEventListener("click", async (e) => {});
 }
