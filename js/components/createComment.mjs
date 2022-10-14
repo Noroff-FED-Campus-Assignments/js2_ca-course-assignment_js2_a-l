@@ -11,7 +11,7 @@ const params = new URLSearchParams(queryString);
 // console.log(params);
 
 const id = params.get("id");
-// console.log(id);
+console.log(id);
 const addComment = `https://nf-api.onrender.com/api/v1/social/api/v1/social/posts/${id}/comment`;
 const commentEntryUrl = `https://nf-api.onrender.com/api/v1/social/posts/${id}?_author=true&_reactions=true&_comments=true`;
 const commentForm = document.querySelector(".comment__form");
@@ -19,41 +19,41 @@ const userName = localStorage.getItem("userName");
 const token = localStorage.getItem("accessToken");
 
 async function addCommentApiCall(url, option = {}) {
-    try {
-        const response = await fetch(url, option);
-        console.log(response);
-        const data = await response.json();
-        console.log(data);
-    } catch (error) {
-        console.log(error);
-    }
+  try {
+    const response = await fetch(url, option);
+    console.log(response);
+    const data = await response.json();
+    console.log(data);
+  } catch (error) {
+    console.log(error);
+  }
 }
 
 async function getPostById() {
-    try {
-        const response = await fetch(commentEntryUrl, fetchOptions);
-        const data = await response.json();
-        // console.log(data);
-        // window.localStorage.getItem("userName");
-        // JSON.parse(window.localStorage.getItem("userName"));
-        // let KeyName = window.localStorage.key(index);
+  try {
+    const response = await fetch(commentEntryUrl, fetchOptions);
+    const data = await response.json();
+    // console.log(data);
+    // window.localStorage.getItem("userName");
+    // JSON.parse(window.localStorage.getItem("userName"));
+    // let KeyName = window.localStorage.key(index);
 
-        // if (userName === userName) {
-        // }
-        createHtml(data);
-        submitComment();
+    // if (userName === userName) {
+    // }
+    createHtml(data);
+    submitComment();
 
-        // console.log(form);
-    } catch (error) {
-        console.log(error);
-    } finally {
-        //
-    }
+    // console.log(form);
+  } catch (error) {
+    console.log(error);
+  } finally {
+    //
+  }
 }
 getPostById();
 
 function createHtml(data) {
-    commentWrapper.innerHTML = `<div class="main__post--container">
+  commentWrapper.innerHTML = `<div class="main__post--container">
                                         <div class="post__user">
                                             <img
                                                 src="${data.author.avatar}"
@@ -104,30 +104,30 @@ function createHtml(data) {
 //     }
 // }
 async function submitComment() {
-    const usersForm = document.querySelector(".comment__form");
-    usersForm.addEventListener("submit", (e) => {
-        e.preventDefault();
-        console.log(usersForm);
-        const payLoad = new FormData(usersForm);
-        const payLoadSerialized = Object.fromEntries(payLoad);
-        console.log(payLoadSerialized, "her");
-        // stenges her, må sjekke, derfor får jeg ikke tak i try
-    });
-    try {
-        console.log(payLoadSerialized, "inni try");
-        // const response = await fetch(addComment, {
-        //     method: "PUT",
-        //     headers: {
-        //         "Content-Type": "application/json",
-        //         Authorization: `Bearer ${token}`,
-        //     },
-        //     body: JSON.stringify(payLoadSeri),
-        // });
-        // const data = await response.json();
-        // console.log(data);
-    } catch (error) {
-        console.log(error);
-    }
+  const usersForm = document.querySelector(".comment__form");
+  usersForm.addEventListener("submit", (e) => {
+    e.preventDefault();
+    console.log(usersForm);
+    const payLoad = new FormData(usersForm);
+    const payLoadSerialized = Object.fromEntries(payLoad);
+    console.log(payLoadSerialized, "her");
+    // stenges her, må sjekke, derfor får jeg ikke tak i try
+  });
+  try {
+    console.log(payLoadSerialized, "inni try");
+    // const response = await fetch(addComment, {
+    //     method: "PUT",
+    //     headers: {
+    //         "Content-Type": "application/json",
+    //         Authorization: `Bearer ${token}`,
+    //     },
+    //     body: JSON.stringify(payLoadSeri),
+    // });
+    // const data = await response.json();
+    // console.log(data);
+  } catch (error) {
+    console.log(error);
+  }
 }
 
 console.log(addComment);
