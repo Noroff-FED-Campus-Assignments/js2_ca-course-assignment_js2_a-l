@@ -19,7 +19,7 @@ export async function homePageContent(method) {
                                               alt="avatar from the user"
                                               class="avatar"
                                             />
-                                            <h2 class="userName"><a href="./otherProfil.html?=${post.author.name}">${post.author.name}</a></h2>
+                                            <h2 class="userName"><a href="/otherProfil.html?name=${post.author.name}">${post.author.name}</a></h2>
                                             <h3>${post.title}</h3>
                                           </div>
                                           <div class="post__message--container">
