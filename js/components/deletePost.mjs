@@ -1,38 +1,49 @@
-function createHtml(data) {
-    commentWrapper.innerHTML = `<div class="main__post--container">
-                                        <div class="post__user">
-                                            <img
-                                                src="${data.author.avatar}"
-                                                alt="avatar from user"
-                                                class="avatar"
-                                            />
-                                            <h2 class="userName">${data.author.name}</h2>
-                                            <h3>${data.title}</h3>
-                                        </div>
-                                        <div class="post__message--container">
-                                            <p>
-                                                ${data.body}
-                                            </p>
-                                            <i class="material-icons"> thumb_up </i>
-                                        </div>
-                                        <div class="action__container">
-                                                        <button class="deletepost__btn">Delete</button>
-                                                        <button class="editpost__btn">Edit post</button>
-                                        </div>
-                                        <div>
-                                                <form class="status__update comment__form">
-                                                    <label for="comment__post">
-                                                     <textarea
-                                                        name="body"
-                                                        id="comment__post"
-                                                        class="txt__comment"
-                                                        cols="30"
-                                                        rows="3"
-                                                        placeholder="What’s on your mind? ......"
-                                                    ></textarea>
-                                                    </label>
-                                                        <button class="comment__btn--post" type="submit">Post Comment</button>
-                                                    </form>
-                                                </div>
-                                        </div>`;
-}
+// const deleteUrl = `https://nf-api.onrender.com/api/v1/social/posts/${id}`;
+
+// async function deleteOwnPost() {
+//     const deleteBtn = document.querySelector(".deletepost__btn");
+//     deleteBtn.addEventListener("click", async (e) => {
+//         try {
+//             const response = await fetch(deleteUrl, {
+//                 method: "DELETE",
+//                 headers: {
+//                     "Content-Type": "application/json",
+//                     Authorization: `Bearer ${token}`,
+//                 },
+//             });
+//             return response;
+//             // console.log(data);
+//         } catch (error) {
+//             console.log(error);
+//         }
+//     });
+// }
+// async function getActionContainer() {
+//     try {
+//         const response = await fetch(commentEntryUrl, fetchOptions);
+//         const data = await response.json();
+//         console.log(data, "fetch med loop");
+//         const name = localStorage.getItem("userName");
+//         console.log(name);
+//         for (let i = 0; i < data.length; i++) {
+//             console.log(name);
+//         }
+
+//         // console.log(form);
+//     } catch (error) {
+//         console.log(error);
+//     } finally {
+//         //
+//     }
+// }
+
+// Edit post
+// async function editPostFunc() {
+//     const showEdit = document.querySelector(".editpost__btn");
+//     const formEdit = document.querySelector(".comment__form");
+//     const formContainer = document.querySelector(".edit__form");
+//     formContainer.style.display = "none";
+//     showEdit.addEventListener("click", () => {
+//         formContainer.style.display = "block";
+//     });
+// }
