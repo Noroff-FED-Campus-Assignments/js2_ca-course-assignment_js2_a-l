@@ -272,3 +272,4 @@ async function editPostFunc() {
         }
     });
 }
+// delete dette
