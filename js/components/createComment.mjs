@@ -11,12 +11,16 @@ const params = new URLSearchParams(queryString);
 // console.log(params);
 
 const id = params.get("id");
-console.log(id);
-const addComment = `https://nf-api.onrender.com/api/v1/social/api/v1/social/posts/${id}/comment`;
+
+// console.log(id);
+const test = `https://nf-api.onrender.com/api/v1/social/posts/${id}?_author=true&_reactions=true&_comments=true`;
+const addComment = `https://nf-api.onrender.com/api/v1/social/posts/${id}/comment`;
+
 const commentEntryUrl = `https://nf-api.onrender.com/api/v1/social/posts/${id}?_author=true&_reactions=true&_comments=true`;
 const commentForm = document.querySelector(".comment__form");
 const userName = localStorage.getItem("userName");
 const token = localStorage.getItem("accessToken");
+const commentContainer = document.querySelector(".container__comments");
 
 async function addCommentApiCall(url, option = {}) {
   try {
@@ -30,25 +34,22 @@ async function addCommentApiCall(url, option = {}) {
 }
 
 async function getPostById() {
-  try {
-    const response = await fetch(commentEntryUrl, fetchOptions);
-    const data = await response.json();
-    // console.log(data);
-    // window.localStorage.getItem("userName");
-    // JSON.parse(window.localStorage.getItem("userName"));
-    // let KeyName = window.localStorage.key(index);
+    try {
+        const response = await fetch(commentEntryUrl, fetchOptions);
+        const data = await response.json();
+        console.log(data);
+        console.log(data.comments);
+        createHtml(data);
 
-    // if (userName === userName) {
-    // }
-    createHtml(data);
-    submitComment();
+        submitMyComment();
 
-    // console.log(form);
-  } catch (error) {
-    console.log(error);
-  } finally {
-    //
-  }
+        // console.log(form);
+    } catch (error) {
+        console.log(error);
+    } finally {
+        showCommets();
+    }
+
 }
 getPostById();
 
@@ -69,7 +70,7 @@ function createHtml(data) {
                                             </p>
                                             <i class="material-icons"> thumb_up </i>
                                         </div>
-                                        <div> 
+                                        <div>
                                                 <form class="status__update comment__form">
                                                     <label for="comment__post">
                                                      <textarea
@@ -87,56 +88,54 @@ function createHtml(data) {
                                         </div>`;
 }
 
-// async function submitComment() {
-//     try {
-//         const form = document.querySelector(".comment__form");
-//         // console.log(form);
-//         form.addEventListener("submit", (e) => {
-//             console.log(form);
-//             e.preventDefault();
-//             const payLoad = new FormData(form);
-//             console.log(payLoad);
-//             const payLoadSeri = Object.fromEntries(payLoad);
-//             console.log(payLoadSeri);
-//         });
-//     } catch (error) {
-//         console.log(error);
-//     }
-// }
-async function submitComment() {
-  const usersForm = document.querySelector(".comment__form");
-  usersForm.addEventListener("submit", (e) => {
-    e.preventDefault();
-    console.log(usersForm);
-    const payLoad = new FormData(usersForm);
-    const payLoadSerialized = Object.fromEntries(payLoad);
-    console.log(payLoadSerialized, "her");
-    // stenges her, må sjekke, derfor får jeg ikke tak i try
-  });
-  try {
-    console.log(payLoadSerialized, "inni try");
-    // const response = await fetch(addComment, {
-    //     method: "PUT",
-    //     headers: {
-    //         "Content-Type": "application/json",
-    //         Authorization: `Bearer ${token}`,
-    //     },
-    //     body: JSON.stringify(payLoadSeri),
-    // });
-    // const data = await response.json();
-    // console.log(data);
-  } catch (error) {
-    console.log(error);
-  }
+
+async function showCommets() {
+    try {
+        const response = await fetch(commentEntryUrl, fetchOptions);
+        const data = await response.json();
+        console.log(data, "show comments");
+        const postCommets = data.comments;
+        console.log(postCommets);
+        postCommets.forEach((ele) => {
+            commentContainer.innerHTML += `<div class="comment__user">
+                                                <h2 class="userName">${ele.owner}</h2>
+                                            </div
+                                            <div class="post__message--container">
+                                                <p>${ele.body}</p>
+                                                <i class="material-icons"> thumb_up </i>
+                                            </div>`;
+        });
+    } catch (error) {
+        console.log(error);
+    }
+
 }
 
-console.log(addComment);
-// console.log(form);
-//             e.preventDefault();
-//             const payLoad = new FormData(form);
-//             console.log(payLoad);
-//             const payLoadSeri = Object.fromEntries(payLoad);
-//             console.log(payLoadSeri);
+async function submitMyComment() {
+    const submitComment = document.querySelector(".comment__form");
+    submitComment.addEventListener("submit", async (e) => {
+        e.preventDefault();
+        console.log(submitComment);
+        const payLoad = new FormData(submitComment);
+        const payLoadSerialized = Object.fromEntries(payLoad);
+        try {
+            const response = await fetch(addComment, {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json",
+                    Authorization: `Bearer ${token}`,
+                },
+                body: JSON.stringify(payLoadSerialized),
+            });
+            const data = await response.json(payLoadSerialized);
+            console.log(data);
+        } catch (error) {
+            console.log(error);
+        } finally {
+            window.location.reload();
+        }
+    });
+}
 
 // user
 // "email": ronjaroverdottir@stud.noroff.no
