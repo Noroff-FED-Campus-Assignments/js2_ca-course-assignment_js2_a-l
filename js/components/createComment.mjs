@@ -159,6 +159,7 @@ async function showCommets() {
         const data = await response.json();
         // console.log(data, "show comments");
         const postCommets = data.comments;
+        commentContainer.innerHTML = "";
         // console.log(postCommets);
         postCommets.forEach((ele) => {
             commentContainer.innerHTML += `<div class="comment__user">
@@ -191,11 +192,11 @@ async function submitMyComment() {
                 body: JSON.stringify(payLoadSerialized),
             });
             const data = await response.json(payLoadSerialized);
-            // console.log(data);
+            console.log(data);
+            submitComment.reset();
         } catch (error) {
             console.log(error);
         } finally {
-            submitComment.reset();
             showCommets();
         }
     });
@@ -240,7 +241,7 @@ async function editPostFunc() {
     const actionContainer = document.querySelector(".action__container");
     const editSendtBtn = document.querySelector(".editsub__btn");
     const wrapperForm = document.querySelector("#wrapper__form");
-    console.log(formContainer);
+    // console.log(formContainer);
     showEdit.addEventListener("click", () => {
         formContainer.style.display = "block";
         actionContainer.style.display = "none";
