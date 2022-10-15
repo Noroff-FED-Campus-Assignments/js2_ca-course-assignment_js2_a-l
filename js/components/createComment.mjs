@@ -49,6 +49,7 @@ async function getPostById() {
         submitMyComment();
         deleteOwnPost();
         editPostFunc();
+        iconReact();
 
         // console.log(form);
     } catch (error) {
@@ -75,7 +76,7 @@ function createHtml(data) {
                                             <p>
                                                 ${data.body}
                                             </p>
-                                            <i class="material-icons"> thumb_up </i>
+                                            <i class="material-icons react"> thumb_up </i>
                                         </div>
                                         <div id="wrapper__form">
                                             <form class="edit__form">
@@ -133,7 +134,7 @@ function createHtmlNotOwner(data) {
                                             <p>
                                                 ${data.body}
                                             </p>
-                                            <i class="material-icons"> thumb_up </i>
+                                            <i class="material-icons react"> thumb_up </i>
                                         </div>
                                         <div>
                                                 <form class="status__update comment__form">
@@ -274,3 +275,21 @@ async function editPostFunc() {
     });
 }
 // delete dette
+export async function iconReact() {
+    const icon = document.querySelector(".react");
+    const reactUrl = ` https://nf-api.onrender.com/api/v1/social/posts/${id}/react/👍`;
+    icon.addEventListener("click", async () => {
+        try {
+            const reactRespons = await fetch(reactUrl, {
+                method: "PUT",
+                headers: {
+                    Authorization: `Bearer ${token}`,
+                },
+            });
+            const reactData = await reactRespons.json();
+            console.log(reactData);
+        } catch (error) {
+            console.log(error);
+        }
+    });
+}
