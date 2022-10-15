@@ -41,14 +41,15 @@ async function getPostById() {
         if (userName === postAuthor) {
             createHtml(data);
             console.log(true);
+            deleteOwnPost();
+            editPostFunc();
         } else {
             createHtmlNotOwner(data);
             console.log(false);
         }
 
         submitMyComment();
-        deleteOwnPost();
-        editPostFunc();
+
         iconReact();
 
         // console.log(form);
