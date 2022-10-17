@@ -15,33 +15,34 @@ const token = localStorage.getItem("accessToken");
 const commentContainer = document.querySelector(".container__comments");
 
 async function getPostById() {
-    try {
-        const response = await fetch(commentEntryUrl, fetchOptions);
-        const data = await response.json();
-        const postAuthor = data.author.name;
-        const userName = localStorage.getItem("userName");
-        if (userName === postAuthor) {
-            createHtml(data);
-            deleteOwnPost();
-            editPostFunc();
-        } else {
-            createHtmlNotOwner(data);
-        }
-        submitMyComment();
-        iconReact();
-    } catch (error) {
-        console.log(error);
-    } finally {
-        showCommets();
+  try {
+    const response = await fetch(commentEntryUrl, fetchOptions);
+    const data = await response.json();
+    const postAuthor = data.author.name;
+    const userName = localStorage.getItem("userName");
+    if (userName === postAuthor) {
+      createHtml(data);
+      deleteOwnPost();
+      editPostFunc();
+    } else {
+      createHtmlNotOwner(data);
     }
+    submitMyComment();
+    iconReact();
+  } catch (error) {
+    console.log(error);
+  } finally {
+    showCommets();
+  }
 }
 getPostById();
 
 function createHtml(data) {
-    commentWrapper.innerHTML = `<div class="main__post--container">
+  commentWrapper.innerHTML = `<div class="main__post--container">
                                         <div class="post__user">
                                             <img
                                                 src="${data.author.avatar}"
+                                                onerror="this.src = './svg/logo/logo.png';" alt="Profile picture"
                                                 alt="avatar from user"
                                                 class="avatar"
                                             />
@@ -94,10 +95,11 @@ function createHtml(data) {
 }
 
 function createHtmlNotOwner(data) {
-    commentWrapper.innerHTML = `<div class="main__post--container">
+  commentWrapper.innerHTML = `<div class="main__post--container">
                                         <div class="post__user">
                                             <img
                                                 src="${data.author.avatar}"
+                                                onerror="this.src = './svg/logo/logo.png';" alt="Profile picture"
                                                 alt="avatar from user"
                                                 class="avatar"
                                             />
@@ -129,13 +131,13 @@ function createHtmlNotOwner(data) {
 }
 
 async function showCommets() {
-    try {
-        const response = await fetch(commentEntryUrl, fetchOptions);
-        const data = await response.json();
-        const postCommets = data.comments;
-        commentContainer.innerHTML = "";
-        postCommets.forEach((ele) => {
-            commentContainer.innerHTML += `<div class="main__post--container comment">
+  try {
+    const response = await fetch(commentEntryUrl, fetchOptions);
+    const data = await response.json();
+    const postCommets = data.comments;
+    commentContainer.innerHTML = "";
+    postCommets.forEach((ele) => {
+      commentContainer.innerHTML += `<div class="main__post--container comment">
                                                 <div class="comment__user">
                                                     <h2 class="post__user">
                                                         <a href="/otherProfil.html?name=${ele.owner}">
@@ -149,114 +151,114 @@ async function showCommets() {
                                                     </p>
                                                 </div>
                                             </div>`;
-        });
-    } catch (error) {
-        console.log(error);
-    }
+    });
+  } catch (error) {
+    console.log(error);
+  }
 }
 
 async function submitMyComment() {
-    const submitComment = document.querySelector(".comment__form");
-    submitComment.addEventListener("submit", async (e) => {
-        e.preventDefault();
-        const payLoad = new FormData(submitComment);
-        const payLoadSerialized = Object.fromEntries(payLoad);
-        try {
-            const response = await fetch(addComment, {
-                method: "POST",
-                headers: {
-                    "Content-Type": "application/json",
-                    Authorization: `Bearer ${token}`,
-                },
-                body: JSON.stringify(payLoadSerialized),
-            });
-            const data = await response.json(payLoadSerialized);
-            submitComment.reset();
-        } catch (error) {
-            console.log(error);
-        } finally {
-            showCommets();
-        }
-    });
+  const submitComment = document.querySelector(".comment__form");
+  submitComment.addEventListener("submit", async (e) => {
+    e.preventDefault();
+    const payLoad = new FormData(submitComment);
+    const payLoadSerialized = Object.fromEntries(payLoad);
+    try {
+      const response = await fetch(addComment, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          Authorization: `Bearer ${token}`,
+        },
+        body: JSON.stringify(payLoadSerialized),
+      });
+      const data = await response.json(payLoadSerialized);
+      submitComment.reset();
+    } catch (error) {
+      console.log(error);
+    } finally {
+      showCommets();
+    }
+  });
 }
 
 async function deleteOwnPost() {
-    const deleteBtn = document.querySelector(".deletepost__btn");
-    const deleteUrl = `${apiBaseUrl}/api/v1/social/posts/${id}`;
-    deleteBtn.addEventListener("click", async (e) => {
-        try {
-            const response = await fetch(deleteUrl, {
-                method: "DELETE",
-                headers: {
-                    "Content-Type": "application/json",
-                    Authorization: `Bearer ${token}`,
-                },
-            });
-            commentContainer.innerHTML = "";
-            commentWrapper.textContent = "Post was deleted";
-        } catch (error) {
-            console.log(error);
-            commentWrapper.textContent = "Post was deleted" + error;
-        } finally {
-            setTimeout(() => {
-                window.location.replace("/home.html");
-            }, "2000");
-        }
-    });
+  const deleteBtn = document.querySelector(".deletepost__btn");
+  const deleteUrl = `${apiBaseUrl}/api/v1/social/posts/${id}`;
+  deleteBtn.addEventListener("click", async (e) => {
+    try {
+      const response = await fetch(deleteUrl, {
+        method: "DELETE",
+        headers: {
+          "Content-Type": "application/json",
+          Authorization: `Bearer ${token}`,
+        },
+      });
+      commentContainer.innerHTML = "";
+      commentWrapper.textContent = "Post was deleted";
+    } catch (error) {
+      console.log(error);
+      commentWrapper.textContent = "Post was deleted" + error;
+    } finally {
+      setTimeout(() => {
+        window.location.replace("/home.html");
+      }, "2000");
+    }
+  });
 }
 
 async function editPostFunc() {
-    const showEdit = document.querySelector(".editpost__btn");
-    const formContainer = document.querySelector(".edit__form");
-    const actionContainer = document.querySelector(".action__container");
-    const editSendtBtn = document.querySelector(".editsub__btn");
-    const wrapperForm = document.querySelector("#wrapper__form");
-    showEdit.addEventListener("click", () => {
-        formContainer.style.display = "block";
-        actionContainer.style.display = "none";
-        editSendtBtn.style.display = "block";
-    });
-    editSendtBtn.addEventListener("click", async (e) => {
-        e.preventDefault();
-        const payLoad = new FormData(formContainer);
-        const payLoadSerialized = Object.fromEntries(payLoad);
-        try {
-            const response = await fetch(editComment, {
-                method: "PUT",
-                headers: {
-                    "Content-Type": "application/json",
-                    Authorization: `Bearer ${token}`,
-                },
-                body: JSON.stringify(payLoadSerialized),
-            });
-            const data = await response.json(payLoadSerialized);
-            formContainer.innerHTML = "";
-            wrapperForm.textContent = "The Post has been updated!";
-        } catch (error) {
-            console.log(error);
-        } finally {
-            setTimeout(() => {
-                getPostById();
-            }, "2000");
-        }
-    });
+  const showEdit = document.querySelector(".editpost__btn");
+  const formContainer = document.querySelector(".edit__form");
+  const actionContainer = document.querySelector(".action__container");
+  const editSendtBtn = document.querySelector(".editsub__btn");
+  const wrapperForm = document.querySelector("#wrapper__form");
+  showEdit.addEventListener("click", () => {
+    formContainer.style.display = "block";
+    actionContainer.style.display = "none";
+    editSendtBtn.style.display = "block";
+  });
+  editSendtBtn.addEventListener("click", async (e) => {
+    e.preventDefault();
+    const payLoad = new FormData(formContainer);
+    const payLoadSerialized = Object.fromEntries(payLoad);
+    try {
+      const response = await fetch(editComment, {
+        method: "PUT",
+        headers: {
+          "Content-Type": "application/json",
+          Authorization: `Bearer ${token}`,
+        },
+        body: JSON.stringify(payLoadSerialized),
+      });
+      const data = await response.json(payLoadSerialized);
+      formContainer.innerHTML = "";
+      wrapperForm.textContent = "The Post has been updated!";
+    } catch (error) {
+      console.log(error);
+    } finally {
+      setTimeout(() => {
+        getPostById();
+      }, "2000");
+    }
+  });
 }
 
 export async function iconReact() {
-    const icon = document.querySelector(".react");
-    const reactUrl = `${apiBaseUrl}/api/v1/social/posts/${id}/react/👍`;
-    icon.addEventListener("click", async () => {
-        try {
-            const reactRespons = await fetch(reactUrl, {
-                method: "PUT",
-                headers: {
-                    Authorization: `Bearer ${token}`,
-                },
-            });
-            const reactData = await reactRespons.json();
-            console.log(reactData);
-        } catch (error) {
-            console.log(error);
-        }
-    });
+  const icon = document.querySelector(".react");
+  const reactUrl = `${apiBaseUrl}/api/v1/social/posts/${id}/react/👍`;
+  icon.addEventListener("click", async () => {
+    try {
+      const reactRespons = await fetch(reactUrl, {
+        method: "PUT",
+        headers: {
+          Authorization: `Bearer ${token}`,
+        },
+      });
+      const reactData = await reactRespons.json();
+      console.log(reactData);
+    } catch (error) {
+      console.log(error);
+    }
+  });
 }
