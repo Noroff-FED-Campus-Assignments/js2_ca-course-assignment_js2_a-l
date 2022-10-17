@@ -4,6 +4,9 @@ footer {
   align-items: center;
   gap: 20px;
   padding: 10px 0;
+  h2 {
+    color: getColour(bg-gray);
+  }
   img {
     max-width: 100px;
     height: auto;

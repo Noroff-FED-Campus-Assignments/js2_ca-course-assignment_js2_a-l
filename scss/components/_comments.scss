@@ -1,0 +1,25 @@
+.container__comments {
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+    margin: 0 auto;
+    align-items: center;
+    padding: 0;
+    .comment {
+        margin: 5px 0;
+        border-radius: 10px;
+    }
+}
+.action__container {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+}
+#wrapper__form {
+    display: flex;
+    justify-content: center;
+    width: 50%;
+    label {
+        margin-bottom: 10px;
+    }
+}
