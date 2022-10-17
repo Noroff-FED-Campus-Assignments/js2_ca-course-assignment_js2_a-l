@@ -1,7 +1,6 @@
 import { token } from "./apiMethod.mjs";
 import { homeContainer } from "../home.mjs";
 const filterBtn = document.querySelector(".filter__btn");
-console.log(filterBtn);
 
 const filterUrl = `https://nf-api.onrender.com/api/v1/social/posts/?_author=true&_comments=true`;
 
@@ -19,9 +18,8 @@ filterBtn.addEventListener("click", async () => {
 
   for (let i = 0; i < 100; i++) {
     const element = filterData[i];
-    // console.log(element);
     const comments = element.comments.length;
-    // console.log(comments);
+
     if (comments >= 3) {
       homeContainer.innerHTML += `<div class="main__post--container">
                                   <div class="post__user">

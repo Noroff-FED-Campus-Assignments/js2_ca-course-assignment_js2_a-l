@@ -33,14 +33,3 @@ export const fetchOptions = {
     Authorization: `Bearer ${token}`,
   },
 };
-
-// --------------------------------------------
-//dette funker ikke enda
-// export const commentsData = {
-//   method: "POST",
-//   headers: {
-//     "Content-Type": "application/json",
-//     Authorization: `Bearer ${token}`,
-//   },
-//   body: JSON.stringify(formDataSerialized),
-// };

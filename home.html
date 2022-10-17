@@ -58,17 +58,15 @@
     </header>
     <main class="home__main">
       <section class="post__message">
-        <div>
-          <img
-            src="./svg/person_FILL1_wght400_GRAD0_opsz48.svg"
-            alt=""
-            class="avatar"
-          />
-          <h2 class="userName">UserName</h2>
-        </div>
         <form class="status__update">
           <label for="title__comments">
-            <input type="text" name="title" id="title__comments" />
+            <input
+              type="text"
+              name="title"
+              id="title__comments"
+              class="status__title"
+              placeholder="Title of your post"
+            />
           </label>
           <label for="status">
             <textarea
@@ -82,7 +80,7 @@
           <button class="status__btn" type="submit">Post</button>
         </form>
       </section>
-      <div><button class="filter__btn">Newest Post</button></div>
+      <div><button class="filter__btn">Most comments</button></div>
       <section class="main__post--wrapper"></section>
     </main>
     <footer>

@@ -1,22 +1,17 @@
 import { token } from "./apiMethod.mjs";
 
 const queryString = document.location.search;
-console.log(queryString);
 const params = new URLSearchParams(queryString);
-console.log(params);
-
 const nameId = params.get("name");
-console.log(nameId);
-console.log(token);
+
 const followUrl = `https://nf-api.onrender.com/api/v1/social/profiles/${nameId}/follow`;
 const unfollow = `https://nf-api.onrender.com/api/v1/social/profiles/${nameId}/unfollow`;
-console.log(followUrl);
+
 const otherUserUrl = `https://nf-api.onrender.com/api/v1/social/profiles/${nameId}`;
 
 const otherProfilContainer = document.querySelector(
   ".other__container--profile"
 );
-const followContainer = document.querySelector(".other__follows--container");
 
 async function otherUserApicall() {
   try {
@@ -28,7 +23,7 @@ async function otherUserApicall() {
       },
     });
     const json = await response.json();
-    console.log(json);
+
     otherProfilContainer.innerHTML = `<div class="avatar__img--container">
                                     <img class="avatar__image" src="${json.avatar}" onerror="this.src = './svg/logo/logo.png';" alt="Profile picture" />
                                     <img class="banner__image" src="${json.banner}" onerror="this.src = './svg/logo/logo.png';" alt="Profile picture" />
