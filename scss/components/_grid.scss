@@ -1,38 +1,44 @@
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    & html {
-        height: 100%;
-        width: 100%;
-    }
-    & a,
-    button {
-        cursor: pointer;
-        text-decoration: none;
-    }
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  & html {
+    height: 100%;
+    width: 100%;
+  }
+  & a,
+  button {
+    cursor: pointer;
+    text-decoration: none;
+  }
+  & li {
+    list-style-type: none;
+    text-decoration: none;
+  }
 }
 
 body {
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    grid-template-rows: 0.2fr 1fr 0.1fr;
-    grid-template-areas:
-        "header header header"
-        "main main main"
-        "footer footer footer";
-    min-height: 100vh;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 150px auto 0.1fr;
+  justify-content: center;
+  grid-template-areas:
+    "header header header"
+    "main main main"
+    "footer footer footer";
+  min-height: 100vh;
+  background-color: getColour(bg-white);
 
-    & header {
-        grid-area: header;
-        background-color: getColour(primary);
-    }
-    & main {
-        grid-area: main;
-        background-color: getColour(bg-gray);
-    }
-    & footer {
-        grid-area: footer;
-        background-color: getColour(primary);
-    }
+  & header {
+    grid-area: header;
+    background-color: getColour(primary);
+  }
+  & main {
+    align-self: center;
+    grid-area: main;
+  }
+  & footer {
+    grid-area: footer;
+    background-color: getColour(primary);
+  }
 }

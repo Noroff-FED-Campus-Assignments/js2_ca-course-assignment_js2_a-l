@@ -11,8 +11,8 @@
       rel="stylesheet"
     />
     <link rel="icon" href="data:;base64,=" />
-    <script type="module" src="./js/components/editMedia.mjs"></script>
-    <title>Profile</title>
+    <script src="./js/components/createComment.mjs" type="module"></script>
+    <title>Home</title>
   </head>
   <body>
     <header>
@@ -47,24 +47,9 @@
         </div>
       </nav>
     </header>
-    <main class="main__profile">
-      <div class="media__container"></div>
-      <div class="profile__followers">
-        <div class="profile__info">
-          <section class="profile__list"></section>
-          <section class="profile__edit">
-            <button class="btn__edit">Edit</button>
-            <form action="" class="edit__form">
-              <label for="avatar">
-                <input type="text" name="avatar" placeholder="avatar" /> </label
-              ><label for="banner">
-                <input type="text" name="banner" placeholder="banner" />
-              </label>
-              <button class="upt__btn" type="submit">edit profil</button>
-            </form>
-          </section>
-        </div>
-      </div>
+    <main>
+      <section class="main__post--wrapper"></section>
+      <section class="container__comments"></section>
     </main>
     <footer>
       <img src="./svg/logo/logo.png" alt="" />

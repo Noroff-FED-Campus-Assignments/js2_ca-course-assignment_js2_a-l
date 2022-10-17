@@ -1,0 +1,75 @@
+.main__post--wrapper {
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+  margin: 40px 0;
+  align-items: center;
+}
+
+.main__post--container {
+  background-color: getColour(Light-blue);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  max-width: 800px;
+  border-radius: 60px 10px 10px 10px;
+  margin: 20px 0;
+  .post__user {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+    width: 100%;
+  }
+  .avatar {
+    height: 80px;
+    width: 80px;
+    border-radius: 50%;
+    background-color: getColour(bg-gray);
+  }
+}
+.post__message--container {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  height: auto;
+  width: 90%;
+  min-height: 100px;
+  background-color: getColour(bg-gray);
+  margin: 20px;
+
+  border: none;
+  border-radius: 10px;
+
+  p {
+    flex: 1;
+    padding: 10px;
+    font-size: 1.2rem;
+    width: 100%;
+  }
+  i {
+    align-self: flex-end;
+    padding: 0 20px 10px 20px;
+    cursor: pointer;
+    font-size: 2rem;
+  }
+}
+.container__comments {
+  display: flex;
+  flex-direction: column;
+  padding-left: 20px;
+  width: 100%;
+  .avatar {
+    height: 50px;
+    width: 50px;
+  }
+}
+
+.filter__btn {
+  width: 120px;
+  height: 25px;
+  border: none;
+  border-radius: 10px;
+  background-color: getColour(primary);
+  color: getColour(bg-gray);
+}

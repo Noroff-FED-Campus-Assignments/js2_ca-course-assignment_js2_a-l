@@ -11,64 +11,66 @@
       rel="stylesheet"
     />
     <link rel="icon" href="data:;base64,=" />
-    <script src="./js/header.js"></script>
+    <script src="./js/scripts.mjs" type="module"></script>
+    <script src="./js/components/createEntry.mjs" type="module"></script>
+    <script src="./js/components/filter.mjs" type="module"></script>
+    <script src="./js/components/search.mjs" type="module"></script>
+
     <title>Home</title>
   </head>
   <body>
     <header>
       <nav class="navbar">
-        <a href="./home.html" class="navbar__branding">
-          <img class="navbar__branding-img" src="./svg/logo/logo.png" alt="" />
-          <h1>The Community</h1></a
+        <a href="./home.html" class="navbar__branding"
+          ><img src="./svg/logo/logo.png" alt="" /> The Community</a
         >
-        <ul class="navbar__list">
+        <ul class="navbar__menu">
           <li class="navbar__item">
-            <a href="#" class="navbar__link"
+            <a class="navbar__link" href="./home.html"
               ><i class="material-icons"> home </i>Home</a
             >
           </li>
           <li class="navbar__item">
-            <a href="#" class="navbar__link">
-              <i class="material-icons"> person </i> Profil</a
+            <a class="navbar__link" href="./profile.html"
+              ><i class="material-icons"> person </i>Profile</a
             >
           </li>
           <li class="navbar__item">
-            <form action="">
-              <div class="navbar__searchbar">
-                <input
-                  type="text"
-                  class="navbar__searchbar-input"
-                  name="search"
-                  placeholder="Search"
-                />
-                <button type="submit" class="navbar__searchbar-btn">
-                  <i class="material-icons"> search </i>
-                </button>
-              </div>
+            <form class="navbar__from" action="">
+              <input
+                type="text"
+                placeholder="Search..."
+                id="search__bar"
+                name="search"
+              />
+              <button type="submit">
+                <i class="material-icons"> search </i>
+              </button>
             </form>
           </li>
         </ul>
         <div class="hamburger">
-          <span class="bar"></span>
-          <span class="bar"></span>
-          <span class="bar"></span>
+          <span class="hamburger__bar"></span>
+          <span class="hamburger__bar"></span>
+          <span class="hamburger__bar"></span>
         </div>
       </nav>
     </header>
     <main class="home__main">
       <section class="post__message">
-        <div>
-          <img
-            src="./svg/person_FILL1_wght400_GRAD0_opsz48.svg"
-            alt=""
-            class="avatar"
-          />
-          <h2 class="userName">UserName</h2>
-        </div>
-        <form class="status__update" action="">
+        <form class="status__update">
+          <label for="title__comments">
+            <input
+              type="text"
+              name="title"
+              id="title__comments"
+              class="status__title"
+              placeholder="Title of your post"
+            />
+          </label>
           <label for="status">
             <textarea
-              name="status"
+              name="body"
               id="status"
               cols="30"
               rows="3"
@@ -78,6 +80,8 @@
           <button class="status__btn" type="submit">Post</button>
         </form>
       </section>
+      <div><button class="filter__btn">Most comments</button></div>
+      <section class="main__post--wrapper"></section>
     </main>
     <footer>
       <img src="./svg/logo/logo.png" alt="" />

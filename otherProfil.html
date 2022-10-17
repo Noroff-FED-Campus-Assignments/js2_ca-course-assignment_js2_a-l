@@ -11,7 +11,7 @@
       rel="stylesheet"
     />
     <link rel="icon" href="data:;base64,=" />
-    <script type="module" src="./js/components/editMedia.mjs"></script>
+    <script type="module" src="./js/components/followUnfollow.mjs"></script>
     <title>Profile</title>
   </head>
   <body>
@@ -47,23 +47,15 @@
         </div>
       </nav>
     </header>
-    <main class="main__profile">
-      <div class="media__container"></div>
-      <div class="profile__followers">
-        <div class="profile__info">
-          <section class="profile__list"></section>
-          <section class="profile__edit">
-            <button class="btn__edit">Edit</button>
-            <form action="" class="edit__form">
-              <label for="avatar">
-                <input type="text" name="avatar" placeholder="avatar" /> </label
-              ><label for="banner">
-                <input type="text" name="banner" placeholder="banner" />
-              </label>
-              <button class="upt__btn" type="submit">edit profil</button>
-            </form>
-          </section>
-        </div>
+    <main class="profil__main">
+      <div class="main__profile">
+        <div class="other__container--profile"></div>
+        <section class="other__follows--container">
+          <div class="follow">
+            <button class="follow__btn">follow</button>
+            <button class="unfollow__btn">unfollow</button>
+          </div>
+        </section>
       </div>
     </main>
     <footer>
