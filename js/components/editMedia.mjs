@@ -1,7 +1,7 @@
 // import { token } from "./apiMethod.mjs";
 const btnEditMedia = document.querySelector(".btn__edit");
 const editForm = document.querySelector(".edit__form");
-const updBtn = document.querySelector(".upt__btn");
+
 const userName = localStorage.getItem("userName");
 const token = localStorage.getItem("accessToken");
 const mediaContainer = document.querySelector(".media__container");
@@ -10,9 +10,8 @@ const editMediaUrl = `https://nf-api.onrender.com/api/v1/social/profiles/${userN
 async function editMediaApiCall(url, option = {}) {
   try {
     const response = await fetch(url, option);
-    console.log(response);
+
     const data = await response.json();
-    console.log();
   } catch (error) {}
 }
 
@@ -27,7 +26,6 @@ editForm.addEventListener("submit", async (e) => {
   editForm.classList.remove("show");
   const formData = new FormData(editForm);
   const formDataSerialized = Object.fromEntries(formData);
-  console.log(formDataSerialized);
 
   try {
     const response = await fetch(editMediaUrl, {
@@ -45,7 +43,6 @@ editForm.addEventListener("submit", async (e) => {
   }
 });
 
-// onerror="this.src = './svg/logo/logo.png';"
 const profilUrl = `https://nf-api.onrender.com/api/v1/social/profiles/${userName}`;
 
 async function profilApiCall() {

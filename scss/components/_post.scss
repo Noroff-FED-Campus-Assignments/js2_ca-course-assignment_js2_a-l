@@ -14,6 +14,7 @@
   width: 100%;
   max-width: 800px;
   border-radius: 60px 10px 10px 10px;
+  margin: 20px 0;
   .post__user {
     display: flex;
     gap: 20px;
@@ -62,4 +63,13 @@
     height: 50px;
     width: 50px;
   }
+}
+
+.filter__btn {
+  width: 120px;
+  height: 25px;
+  border: none;
+  border-radius: 10px;
+  background-color: getColour(primary);
+  color: getColour(bg-gray);
 }

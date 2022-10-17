@@ -202,6 +202,7 @@ body footer {
 }
 
 .status__update {
+  margin-top: 20px;
   display: flex;
   gap: 10px;
   flex-direction: column;
@@ -215,6 +216,13 @@ body footer {
   resize: none;
   width: 100%;
 }
+.status__update .status__title {
+  border: none;
+  border-radius: 10px;
+  height: 30px;
+  width: 200px;
+  padding-left: 10px;
+}
 .status__update .status__btn {
   width: 30px;
   align-self: flex-end;
@@ -224,7 +232,18 @@ body footer {
   background-color: #002e6b;
   border: none;
   border-radius: 10px;
-  margin-bottom: 10px;
+  margin-bottom: 15px;
+}
+
+.comment__btn--container {
+  margin-bottom: 20px;
+  width: 100px;
+}
+.comment__btn--container .btn__comment--post {
+  background-color: #002e6b;
+  border-radius: 10px;
+  padding: 10px 20px;
+  font-size: 1.2rem;
 }
 
 .login__header {
@@ -311,10 +330,10 @@ a {
   display: block;
 }
 
-.profil__main {
+.main__profile {
+  margin: auto;
   width: 100%;
   max-width: 800px;
-  margin: 100px auto;
 }
 
 .media__container {
@@ -334,6 +353,28 @@ a {
   width: 100%;
   height: 150px;
   object-fit: cover;
+}
+
+.profile__edit {
+  margin-top: 20px;
+}
+
+.edit__form input {
+  padding-left: 10px;
+  border: 1px solid #7194c1;
+  height: 25px;
+  border-radius: 10px;
+}
+
+.btn__edit,
+.upt__btn {
+  background-color: #002e6b;
+  color: #e5eaef;
+  width: 100px;
+  height: 30px;
+  font-size: 1.2rem;
+  border-radius: 10px;
+  border: none;
 }
 
 .other__container--profile {
@@ -356,6 +397,21 @@ a {
   object-fit: cover;
 }
 
+.other__follows--container {
+  display: flex;
+  justify-content: end;
+  margin-top: 20px;
+}
+.other__follows--container button {
+  background-color: #002e6b;
+  color: #e5eaef;
+  width: 100px;
+  height: 30px;
+  font-size: 1.2rem;
+  border-radius: 10px;
+  border: none;
+}
+
 .main__post--wrapper {
   display: flex;
   width: 100%;
@@ -372,6 +428,7 @@ a {
   width: 100%;
   max-width: 800px;
   border-radius: 60px 10px 10px 10px;
+  margin: 20px 0;
 }
 .main__post--container .post__user {
   display: flex;
@@ -420,4 +477,13 @@ a {
 .container__comments .avatar {
   height: 50px;
   width: 50px;
+}
+
+.filter__btn {
+  width: 120px;
+  height: 25px;
+  border: none;
+  border-radius: 10px;
+  background-color: #002e6b;
+  color: #e5eaef;
 }/*# sourceMappingURL=styles.css.map */

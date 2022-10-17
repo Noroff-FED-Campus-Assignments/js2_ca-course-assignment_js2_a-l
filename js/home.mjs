@@ -1,4 +1,3 @@
-// import { postUrl } from "./scripts.mjs";
 import { fetchOptions } from "./components/apiMethod.mjs";
 export const homeContainer = document.querySelector(".main__post--wrapper");
 
@@ -10,11 +9,11 @@ export async function homePageContent(method) {
     const data = await method(urlPostAuthor, fetchOptions);
     for (let i = 0; i < 10; i++) {
       const post = data[i];
-      // console.log(post);
       homeContainer.innerHTML += `<div class="main__post--container">
                                             <div class="post__user">
                                             <img
                                               src="${post.author.avatar}"
+                                              onerror="this.src = './svg/logo/logo.png';" alt="Profile picture"
                                               alt="avatar from the user"
                                               class="avatar"
                                             />
@@ -25,9 +24,9 @@ export async function homePageContent(method) {
                                             <p>
                                               ${post.body}
                                             </p>
-                                            <i class="material-icons react"> thumb_up </i>
+                                            
                                           </div>
-                                          <div>
+                                          <div class="comment__btn--container">
                                             <a href="/comment.html?id=${post.id}" class="btn__comment--post">comment</a>
                                           </div>
                                         </div>`;
