@@ -1,0 +1,12 @@
+@function getColour($colour) {
+  @return map-get($colors, $colour);
+}
+
+$colors: (
+  primary: #002e6b,
+  Light-blue: #7194c1,
+  bg-gray: #e5eaef,
+  bg-black: #000,
+);
+
+// eks: background-color: getColour(Light-blue);

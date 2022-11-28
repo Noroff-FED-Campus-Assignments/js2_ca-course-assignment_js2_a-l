@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="" />
+    <meta name="keywords" content="" />
+    <link rel="stylesheet" href="/css/styles.css" />
+    <link
+      href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet"
+    />
+    <link rel="icon" href="data:;base64,=" />
+    <script src="./js/header.js"></script>
+    <title>Home</title>
+  </head>
+  <body>
+    <header>
+      <nav class="navbar">
+        <a href="./home.html" class="navbar__branding">
+          <img class="navbar__branding-img" src="./svg/logo/logo.png" alt="" />
+          <h1>The Community</h1></a
+        >
+        <ul class="navbar__list">
+          <li class="navbar__item">
+            <a href="#" class="navbar__link"
+              ><i class="material-icons"> home </i>Home</a
+            >
+          </li>
+          <li class="navbar__item">
+            <a href="#" class="navbar__link">
+              <i class="material-icons"> person </i> Profil</a
+            >
+          </li>
+          <li class="navbar__item">
+            <form action="">
+              <div class="navbar__searchbar">
+                <input
+                  type="text"
+                  class="navbar__searchbar-input"
+                  name="search"
+                  placeholder="Search"
+                />
+                <button type="submit" class="navbar__searchbar-btn">
+                  <i class="material-icons"> search </i>
+                </button>
+              </div>
+            </form>
+          </li>
+        </ul>
+        <div class="hamburger">
+          <span class="bar"></span>
+          <span class="bar"></span>
+          <span class="bar"></span>
+        </div>
+      </nav>
+    </header>
+    <main class="home__main">
+      <section class="post__message">
+        <div>
+          <img
+            src="./svg/person_FILL1_wght400_GRAD0_opsz48.svg"
+            alt=""
+            class="avatar"
+          />
+          <h2 class="userName">UserName</h2>
+        </div>
+        <form class="status__update" action="">
+          <label for="status">
+            <textarea
+              name="status"
+              id="status"
+              cols="30"
+              rows="3"
+              placeholder="What’s on your mind? ......"
+            ></textarea>
+          </label>
+          <button class="status__btn" type="submit">Post</button>
+        </form>
+      </section>
+    </main>
+    <footer>
+      <img src="./svg/logo/logo.png" alt="" />
+      <h2>The Community</h2>
+    </footer>
+  </body>
+</html>
